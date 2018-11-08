@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formation index{% endblock %}
+
+{% block body %}
+   {#    #}
+<section class="main-section client-part" id="client">
+        <!--main-section client-part-start-->
+        <div class="container">
+          {#   <b class="quote-right wow fadeInDown delay-03"><i class="fa fa-quote-right"></i></b> #}
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="client-part-haead wow fadeInDown delay-05">Formation à la gestion des risques associés aux explosifs,mines,munitions et à la menace terroriste</p>
+                </div>
+            </div>
+            {# <ul class="client wow fadeIn delay-05s">
+                <li><a href="#">
+                <img src="{{ asset('img/client-pic1.jpg')}}" alt="">
+                <h3>James Bond</h3>
+                <span>License To Drink Inc.</span>
+            </a></li>
+            </ul> #}
+        </div>
+    </section>
+   <section class="main-section" id="service">
+        <!--main-section-start-->
+        <div class="container">
+            <h2>Formations</h2>
+            <h6>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence de vogouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs/ Les formation Neutrex-int technique proposé ainsi que l'utilisation maximale d'exercices pratique se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés.</h6>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
+                    {% for formation in formations  %}
+                    <div class="service-list">
+                        <div class="service-list-col1">
+                            <i class="fa fa-paw"></i>
+                        </div>
+                         <div class="service-list-col2">
+                            <h3>{{ formation.theme }}</h3>
+                            <p>{{ formation.soustheme }}</p>
+                            <p>{{ formation.duree }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                   
+                </div>                
+                <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
+                    <div class="service-list">
+                        <div class="service-list-col1">
+                            <i class="fa fa-paw"></i>
+                        </div>
+                        <div class="service-list-col2">
+                            <h3>Prérequis</h3>
+                            <p>La connaissance parfaite de l langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
+                        </div>
+                    </div>
+                    <div class="service-list">
+                        <div class="service-list-col1">
+                            <i class="fa fa-gear"></i>
+                        </div>
+                        <div class="service-list-col2">
+                            <h3>Qualifications</h3>
+                            <p>A l'issue de la réussite de chaque cycle de formation, un diplôme équivalent à la formation est délivré.</p>
+                        </div>
+                    </div>
+                    <div class="service-list">
+                        <div class="service-list-col1">
+                            <i class="fa fa-apple"></i>
+                        </div>
+                        <div class="service-list-col2">
+                            <h3>Assurance qualité</h3>
+                            <p>Toutes nos formations bénéficient d'un contrôle assurance qualité effectué par un organisme externe et reconnus.</p>
+                        </div>
+                    </div>
+                     <figure class="  text-right wow fadeInUp delay-02s">
+                    <img src="{{ asset('img/logoadem.png')}}" alt="">
+                    </figure>
+                    <figure class="  text-right wow fadeInUp delay-02s">
+                    <img src="{{ asset('img/classew2.jpg')}}" alt="">
+                </figure>
+                </div>
+
+                   
+            </div>
+
+                {# <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
+                    <img src="{{ asset('img/classew2.jpg')}}" alt="">
+                </figure> #}
+
+            </div>
+        </div>
+    </section>
+    <!--main-section-end-->
+    <section class="business-talking">
+        <!--business-talking-start-->
+        <div class="container">
+            <h2>Partenaires.</h2>
+        </div>
+    </section>
+ 
+
+
+
+   {#  <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Theme</th>
+                <th>Soustheme</th>
+                <th>Duree</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td>{{ formation.id }}</td>
+                <td>{{ formation.theme }}</td>
+                <td>{{ formation.soustheme }}</td>
+                <td>{{ formation.duree }}</td>
+                <td>
+                    <a href="{{ path('formation_show', {'id': formation.id}) }}">show</a>
+                    <a href="{{ path('formation_edit', {'id': formation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('formation_new') }}">Create new</a> #}
+{% endblock %}
