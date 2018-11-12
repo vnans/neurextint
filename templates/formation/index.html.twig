@@ -32,12 +32,13 @@
                     {% for formation in formations  %}
                     <div class="service-list">
                         <div class="service-list-col1">
-                            <i class="fa fa-paw"></i>
+                            <img src="{{ asset('img/FORMATION1.jpg')}}" alt="FORMATION1"> 
                         </div>
                          <div class="service-list-col2">
                             <h3>{{ formation.theme }}</h3>
                             <p>{{ formation.soustheme }}</p>
                             <p>{{ formation.duree }}</p>
+                             <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}">S'incrire</a></p>
                         </div>
                     </div>
                 {% endfor %}

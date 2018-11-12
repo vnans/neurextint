@@ -1,0 +1,10 @@
+dev:
+    scheme: ftp
+    host: ftp.neutrex-int.com
+    port: 21
+    user: neutr1062331
+    pass: k5tqhEcB
+    check: true
+    path:
+        remote: /
+

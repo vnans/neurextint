@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscrit{% endblock %}
+
+{% block body %}
+    <h1>Inscrit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ inscrit.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ inscrit.nom }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ inscrit.tel }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ inscrit.email }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ inscrit.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Formation</th>
+                <td>{{ inscrit.formation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('inscrit_index') }}">back to list</a>
+
+    <a href="{{ path('inscrit_edit', {'id': inscrit.id}) }}">edit</a>
+
+    {{ include('inscrit/_delete_form.html.twig') }}
+{% endblock %}
