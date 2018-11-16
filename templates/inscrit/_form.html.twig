@@ -1,6 +1,36 @@
 {{ form_start(form) }}
    
-    {{ form_widget(form.formation, {'attr': {'value': formation.id, }} ) }}
-     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="form">
+    	<label for=""> Nom et prénoms</label>
+    	<div class="form-group">
+    		
+    		{{ form_widget(form.nom , { 'attr': {'class':'form-control input-text'}}) }}
+    	</div>
+    		<label for=""> Numéro de téléphone</label>
+    	<div class="form-group">
+    	
+    		{{ form_widget(form.tel,{ 'attr': {'class':'form-control input-text'}}) }}
+    	</div>
+    		<label for="">Email</label>
+    	<div class="form-group">
+    	
+    		{{ form_widget(form.email,{ 'attr': {'class':'form-control input-text'}}) }}
+    	</div>
+    	<label for=""> Adresse </label>
+    	<div class="form-group">
+    		
+    		{{ form_widget(form.adresse,{ 'attr': {'class':'form-control input-text'}}) }}
+    	</div>
+    		<label for=""> Formation</label>
+    	<div class="form-group">
+    	
+    		{{ form_widget(form.formation, {'attr': {'value': formation.theme ,'class':'form-control input-text' } } ) }}
+    	</div>
+    
+    
+    </div>
+     <div class="text-center">
+          <button class="btn btn-success input-btn ">{{ button_label|default('Valider ') }}</button>
+     </div>
+   
 {{ form_end(form) }}

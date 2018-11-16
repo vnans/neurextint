@@ -26,10 +26,19 @@
         <!--main-section-start-->
         <div class="container">
             <h2>Formations</h2>
-            <h6>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence de vogouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs/ Les formation Neutrex-int technique proposé ainsi que l'utilisation maximale d'exercices pratique se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés.</h6>
+           <p>
+                <h6>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</h6>
+           </p>
+            <p><h6>
+                Les formations Neutrex-int technique proposées ainsi que l'utilisation maximale d'exercices pratique se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
+            </h6></p>
             <div class="row">
                 <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
-                    {% for formation in formations  %}
+
+                    <figure class="  text-right wow fadeInUp delay-02s">
+                    <img src="{{ asset('img/classew2.jpg')}}" alt="">
+                    </figure>
+                    {# {% for formation in formations  %}
                     <div class="service-list">
                         <div class="service-list-col1">
                             <img src="{{ asset('img/FORMATION1.jpg')}}" alt="FORMATION1"> 
@@ -41,7 +50,7 @@
                              <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}">S'incrire</a></p>
                         </div>
                     </div>
-                {% endfor %}
+                {% endfor %} #}
                    
                 </div>                
                 <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
@@ -75,9 +84,9 @@
                      <figure class="  text-right wow fadeInUp delay-02s">
                     <img src="{{ asset('img/logoadem.png')}}" alt="">
                     </figure>
-                    <figure class="  text-right wow fadeInUp delay-02s">
+                    {# <figure class="  text-right wow fadeInUp delay-02s">
                     <img src="{{ asset('img/classew2.jpg')}}" alt="">
-                </figure>
+                </figure> #}
                 </div>
 
                    
@@ -91,6 +100,63 @@
         </div>
     </section>
     <!--main-section-end-->
+
+    <section class="main-section paddind" id="Portfolio">
+        <!--main-section-start-->
+        <div class="container">
+            <h2>Liste de nos formations</h2>
+            <h6>Nous sommes Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h6>
+            {# <div class="portfolioFilter">
+                <ul class="Portfolio-nav wow fadeIn delay-02s">
+                    <li><a href="#" data-filter="*" class="current">All</a></li>
+                    <li><a href="#" data-filter=".branding">Branding</a></li>
+                    <li><a href="#" data-filter=".webdesign">Web design</a></li>
+                    <li><a href="#" data-filter=".printdesign">Print design</a></li>
+                    <li><a href="#" data-filter=".photography">Photography</a></li>
+                </ul>
+            </div> #}
+
+        </div>
+        <div class="portfolioContainer wow fadeInUp delay-04s">
+            {% for formation in formations %}
+            <div class=" Portfolio-box printdesign">
+               
+                <a href="{{ path('inscrit_new', {'id': formation.id}) }}"><img src="{{asset('img/Portfolio-pic1.jpg')}}" alt=""></a>
+                 <h3>{{ formation.theme }}</h3>
+                  <p>{{ formation.soustheme }}</p>
+                  <p>{{ formation.duree }}</p>
+                <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}"> <button class="btn btn-success" >S'incrire</button> </a></p>
+            </div>
+             {% endfor %}
+  {#           <div class="Portfolio-box webdesign">
+                <a href="img/Portfolio-pic2.jpg"><img src="img/Portfolio-pic2.jpg" alt=""></a>
+                <h3>Luca Theme</h3>
+                <p>Web Design</p>
+            </div>
+            <div class=" Portfolio-box branding">
+                <a href="img/Portfolio-pic3.jpg"><img src="img/Portfolio-pic3.jpg" alt=""></a>
+                <h3>Uni Sans</h3>
+                <p>Branding</p>
+            </div>
+            <div class=" Portfolio-box photography">
+                <a href="img/Portfolio-pic4.jpg"><img src="img/Portfolio-pic4.jpg" alt=""></a>
+                <h3>Vinyl Record</h3>
+                <p>Photography</p>
+            </div>
+            <div class=" Portfolio-box branding">
+                <a href="img/Portfolio-pic5.jpg"><img src="img/Portfolio-pic5.jpg" alt=""></a>
+                <h3>Hipster</h3>
+                <p>Branding</p>
+            </div> 
+            <div class=" Portfolio-box photography">
+                <a href="img/Portfolio-pic6.jpg"><img src="img/Portfolio-pic6.jpg" alt=""></a>
+                <h3>Windmills</h3>
+                <p>Photography</p>
+            </div>#}
+        </div>
+    </section>
+    <!--main-section-end-->
+
     <section class="business-talking">
         <!--business-talking-start-->
         <div class="container">

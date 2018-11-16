@@ -40,7 +40,7 @@ class InscritController extends AbstractController
             $em->persist($inscrit);
             $em->flush();
 
-            return $this->redirectToRoute('inscrit_index');
+            return $this->redirectToRoute('formation_index');
         }
 
         return $this->render('inscrit/new.html.twig', [

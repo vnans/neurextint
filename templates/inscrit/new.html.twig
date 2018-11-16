@@ -3,9 +3,34 @@
 {% block title %}New Inscrit{% endblock %}
 
 {% block body %}
-    <h1>{{formation.theme}}</h1>
+	<!--business-talking-end-->
+	<div class="container">
+		<section class="main-section contact" id="contact">
+			
+			<div class="row">
+				<div class="col-lg-3 wow fadeInLeft">
+					
+					
+					
+				</div>
+				<div class="col-lg-6 col-sm-12 wow fadeInUp delay-05s">
+				<h3>Incription à la formation {{formation.theme}}</h3>
+						
+							{{ include('inscrit/_form.html.twig') }}
+							
+						
+				
+				</div>
+				<div class="col-lg-3  wow fadeInLeft">
+					
+					
+					
+				</div>
+			</div>
+		</section>
+	</div>
+   
 
-    {{ include('inscrit/_form.html.twig') }}
-
-    <a href="{{ path('inscrit_index') }}">back to list</a>
+  
+   {#  <a href="{{ path('inscrit_index') }}">back to list</a> #}
 {% endblock %}

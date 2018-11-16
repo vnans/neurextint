@@ -16,4 +16,12 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    /**
+     * @Route("/activite", name="activite")
+     */
+    public function activite()
+    {
+        return $this->render('default/activite.html.twig');
+    }
 }
