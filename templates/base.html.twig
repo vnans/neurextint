@@ -18,7 +18,8 @@
 		<link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" type="text/css">
-		<link href="{{  asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+
 
         {% endblock %}
     </head>
@@ -28,8 +29,11 @@
 			<!--main-nav-start-->
 			<div class="container" >
 				<ul class="main-nav">
+					{% if is_granted('ROLE_ADMIN') %} 
+						{% else %}
+						<li><a href="{{path('default')}}">Présentation</a></li>
+					{% endif %}
 					
-					<li><a href="{{path('default')}}">Présentation</a></li>
 					<li><a href="{{path('activite')}}">Liste des activités</a></li>
 					<li class="small-logo"><a href="{{path('default')}}"><img src="{{ asset('img/slogo.png')}}" alt=""></a></li>
 					{# <li><a href="#client">Clients</a></li>
@@ -37,7 +41,29 @@
 
 					<li><a href="{{ path('formation_index') }}">Formations</a></li>
 					<li><a href=" {{ path('contact_new')}} ">Contact</a></li>
-					<li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+					{% if is_granted('ROLE_ADMIN') %}
+						<li>
+						<div class="btn-group">
+						  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   Actions
+						  </button>
+						  <div class="dropdown-menu" >
+						    <a class="dropdown-item" href="#" style="color:green;">Action</a>
+						     <a class="dropdown-item" href="#" style="color:green;">Action</a>
+						     <a class="dropdown-item" href="#" style="color:green;">Action</a>
+						    <div class="dropdown-divider"></div>
+						    <a class="dropdown-item" href="#" style="color:green;">Liste des formations</a>
+						     <a class="dropdown-item" href="#" style="color:green;">Action</a>
+						      <a class="dropdown-item" href="#" style="color:green;">Action</a>
+						  </div>
+						</div>
+					</li>
+					  {% else %}
+					 {#  	<li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li> #}
+					  {% endif %}
+					
+					
+
 				</ul>
 				<a class="res-nav_click" href="{{path('default')}}"><i class="fa fa-bars"></i></a>
 			</div>
@@ -79,15 +105,21 @@
 
 <footer class="footer">
 		<div class="container">
-			<div class="footer-logo"><a href="#"><img src="img/footer-logo.png" alt=""></a></div>
+			<div class="footer-logo"><a href="#"><img src="{{ asset('img/slogo.png')}}" alt=""></a></div>
 			<span class="copyright">&copy; Neutrex-int.</span>
 			<div class="credits">
-				<!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
-        -->
+				<div class="container" >
+						<ul class="main-nav">
+							
+							{% if is_granted('ROLE_ADMIN') %}
+							{% else %}
+								<li><a href="{{ path('fos_user_security_login') }}" style="color:green;">Espace Admin</a></li>
+							 {% endif %}
+					
+							
+						</ul>
+						<a class="res-nav_click" href="{{path('default')}}"><i class="fa fa-bars"></i></a>
+					</div>
 					 <a href="#"></a>
 			</div>
 		</div>

@@ -41,6 +41,18 @@ class Inscrit
      */
     private $formation;
 
+    /**
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+   
+    public function onPrePersist()
+    {
+        $this->created = new \DateTime("now");
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +114,18 @@ class Inscrit
     public function setFormation(string $formation): self
     {
         $this->formation = $formation;
+
+        return $this;
+    }
+
+    public function getCreated(): ?\DateTimeInterface
+    {
+        return $this->created;
+    }
+
+    public function setCreated(\DateTimeInterface $created): self
+    {
+        $this->created = $created;
 
         return $this;
     }

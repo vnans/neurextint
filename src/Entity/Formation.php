@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
@@ -30,6 +31,13 @@ class Formation
      * @ORM\Column(type="string", length=255)
      */
     private $duree;
+
+     /**
+     * @var string
+     * @Gedmo\Slug(fields={"theme","soustheme","duree"})
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $slug;
 
 
 
@@ -70,6 +78,18 @@ class Formation
     public function setDuree(string $duree): self
     {
         $this->duree = $duree;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

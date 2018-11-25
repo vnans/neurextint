@@ -1,43 +1,74 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminbase.html.twig' %}
 
 {% block title %}Inscrit index{% endblock %}
 
 {% block body %}
-    <h1>Inscrit index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Tel</th>
-                <th>Email</th>
-                <th>Adresse</th>
-                <th>Formation</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+   <div class="container-fluid">
+       <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Liste des inscrits aux formations </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Tel</th>
+                        <th>Email</th>
+                        <th>Adresse</th>
+                        <th>Formation</th>
+                        <th>actions</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Tel</th>
+                        <th>Email</th>
+                        <th>Adresse</th>
+                        <th>Formation</th>
+                        <th>actions</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                   
+                    
         {% for inscrit in inscrits %}
-            <tr>
-                <td>{{ inscrit.id }}</td>
-                <td>{{ inscrit.nom }}</td>
-                <td>{{ inscrit.tel }}</td>
-                <td>{{ inscrit.email }}</td>
-                <td>{{ inscrit.adresse }}</td>
-                <td>{{ inscrit.formation }}</td>
-                <td>
-                    <a href="{{ path('inscrit_show', {'id': inscrit.id}) }}">show</a>
-                    <a href="{{ path('inscrit_edit', {'id': inscrit.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
+                <tr>
+                    <td>{{ inscrit.id }}</td>
+                    <td>{{ inscrit.nom }}</td>
+                    <td>{{ inscrit.tel }}</td>
+                    <td>{{ inscrit.email }}</td>
+                    <td>{{ inscrit.adresse }}</td>
+                    <td>{{ inscrit.formation }}</td>
+                    <td>
+                        <a href="{{ path('inscrit_show', {'id': inscrit.id}) }}">show</a>
+                        <a href="{{ path('inscrit_edit', {'id': inscrit.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun inscrits</td>
+                </tr>
         {% endfor %}
-        </tbody>
-    </table>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Dernier inscrit le 12/11/2018</div>
+          </div>
 
+
+   </div>
+
+ 
+
+    
   {#   <a href="{{ path('inscrit_new') }}">Create new</a> #}
 {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+	<div class="container" style="background:url(../img/acc.png) top center;" >
+		<section class="main-section contact" id="contact">
+			
+			<div class="row">
+				<div class="col-lg-3 wow fadeInLeft">
+					
+					
+					
+				</div>
+				<div class="col-lg-6 col-sm-12 wow fadeInUp delay-05s">
+				<h3><a href="path('default') ">Accueil</a></h3>
+				<h2>Espace admin</h2>
+						
+							{{ include('@FOSUser/Security/login_content.html.twig') }}
+													
+				</div>
+				<div class="col-lg-3  wow fadeInLeft">
+					
+					
+					
+				</div>
+			</div>
+		</section>
+	</div>
+    
+{% endblock fos_user_content %}

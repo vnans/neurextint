@@ -1,11 +1,69 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminbase.html.twig' %}
 
-{% block title %}Contact index{% endblock %}
+{% block title %}Contacts{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
+    
+    <div class="container-fluid">
+        <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Liste des messages</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Objet</th>
+                    <th>Message</th>
+                    <th>actions</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Id</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Objet</th>
+                    <th>Message</th>
+                    <th>actions</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                   
+                    
+        {% for contact in contacts %}
+                <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.nom }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.objet }}</td>
+                <td>{{ contact.message }}</td>
+                <td>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
+                   {#  <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a> #}
+                </td>
+                </tr>
+        { {% else %}
+            <tr>
+                <td colspan="6">Aucun messages</td>
+            </tr>
+        {% endfor %}
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Dernier message depuis le : 18/11/2018</div>
+          </div>
+    </div>
+ 
 
-    <table class="table">
+    {# <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -35,7 +93,7 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table> #}
 
-    <a href="{{ path('contact_new') }}">Create new</a>
+  {#   <a href="{{ path('contact_new') }}">Create new</a> #}
 {% endblock %}

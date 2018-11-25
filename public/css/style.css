@@ -784,7 +784,8 @@ border: 2px solid #fff;
 	width: 76px;
 }
 .copyright, .credits{
-	color:#cccccc;
+	/*color:#cccccc;*/
+	color:#30722d;
 	font-size:14px;
 	display:block;
 	text-align:center;
