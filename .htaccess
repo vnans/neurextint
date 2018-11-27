@@ -7,6 +7,9 @@ RewriteEngine On
             RewriteCond %{HTTP:Authorization} ^(.*)
             RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
             RewriteEngine On
-<IfModule mime_module> 
-AddType application/x-httpd-alt-php72 .php .php7 .phtml
-<IfModule>
+# php -- BEGIN cPanel-generated handler, do not edit
+# Définissez le package « alt-php72 » comme langage de programmation « PHP » par défaut.
+<IfModule mime_module>
+  AddType application/x-httpd-alt-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

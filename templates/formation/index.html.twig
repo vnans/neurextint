@@ -121,7 +121,7 @@
             {% for formation in formations %}
             <div class=" Portfolio-box printdesign">
                
-                <a href="{{ path('inscrit_new', {'id': formation.id}) }}"><img src="{{asset('img/Portfolio-pic1.jpg')}}" alt=""></a>
+                <a href="{{ path('inscrit_new', {'id': formation.id}) }}"><img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}"></a>
                  <h3>{{ formation.theme }}</h3>
                   <p>{{ formation.soustheme }}</p>
                   <p>{{ formation.duree }}</p>

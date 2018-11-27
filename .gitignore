@@ -3,6 +3,9 @@
 /.env
 /public/bundles/
 /var/
+/translations/
+/tests/
+/.htaccess
 
 ###< symfony/framework-bundle ###
 

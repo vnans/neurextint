@@ -39,6 +39,11 @@ class Formation
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
 
 
     public function getId(): ?int
@@ -90,6 +95,18 @@ class Formation
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

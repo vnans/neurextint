@@ -6,6 +6,7 @@ use App\Entity\Formation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class FormationType extends AbstractType
 {
@@ -15,6 +16,7 @@ class FormationType extends AbstractType
             ->add('theme')
             ->add('soustheme')
             ->add('duree')
+            ->add('image', FileType::class, array('label' => 'Choisir une image','data_class'=>null))
         ;
     }
 
