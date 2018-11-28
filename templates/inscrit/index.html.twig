@@ -47,8 +47,8 @@
                     <td>{{ inscrit.adresse }}</td>
                     <td>{{ inscrit.formation }}</td>
                     <td>
-                        <a href="{{ path('inscrit_show', {'id': inscrit.id}) }}">show</a>
-                        <a href="{{ path('inscrit_edit', {'id': inscrit.id}) }}">edit</a>
+                        <a href="{{ path('inscrit_show', {'id': inscrit.id}) }}">Afficher</a>
+                        {# <a href="{{ path('inscrit_edit', {'id': inscrit.id}) }}">edit</a> #}
                     </td>
                 </tr>
             {% else %}

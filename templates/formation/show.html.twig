@@ -1,35 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'adminbase.html.twig' %}
 
 {% block title %}Formation{% endblock %}
 
 {% block body %}
 
-    <h1>Formation</h1>
+<div class="container">
+        
+        <section class="main-section contact" id="contact">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ formation.id }}</td>
-            </tr>
-            <tr>
-                <th>Theme</th>
-                <td>{{ formation.theme }}</td>
-            </tr>
-            <tr>
-                <th>Soustheme</th>
-                <td>{{ formation.soustheme }}</td>
-            </tr>
-            <tr>
-                <th>Duree</th>
-                <td>{{ formation.duree }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <div class="row">
+                <div class="col-lg-6 col-sm-7 wow fadeInLeft">
+                 <img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}" style="height:300px ; width:450px ;">
+                      
+                </div>  
 
-    <a href="{{ path('formation_index') }}">Retour à la liste</a>
+              
+                <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
+                
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ formation.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Theme</th>
+                                <td>{{ formation.theme }}</td>
+                            </tr>
+                            <tr>
+                                <th>Soustheme</th>
+                                <td>{{ formation.soustheme }}</td>
+                            </tr>
+                            <tr>
+                                <th>Duree</th>
+                                <td>{{ formation.duree }}</td>
+                            </tr>
+                        </tbody>
+                    </table>        
+                    
+                </div>
+            </div>
+            <a href="{{ path('formation_indexadmin') }}">Retour à la liste </a>
 
-    <a href="{{ path('formation_edit', {'id': formation.id}) }}">edit</a>
+            <a href="{{ path('formation_edit', {'id': formation.id}) }}"> Modifier</a>
 
-    {{ include('formation/_delete_form.html.twig') }}
+            {{ include('formation/_delete_form.html.twig') }}
+        </section>
+    </div>
+
+    
 {% endblock %}
