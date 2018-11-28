@@ -50,7 +50,7 @@ class FormationController extends AbstractController
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             // moves the file to the directory where brochures are stored
             $file->move($this->getParameter('images_directory'), $fileName); // stock image dans /public/img
-            $file->move($this->getParameter('images_directory2'), $fileName); // copie de l'image ici /img
+            
 
             $formation->setImage($fileName); 
 
