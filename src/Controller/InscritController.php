@@ -40,6 +40,8 @@ class InscritController extends AbstractController
             $em->persist($inscrit);
             $em->flush();
 
+            $this->addFlash('infoInscrit','Inscription enrégistrée');
+
             return $this->redirectToRoute('formation_index');
         }
 

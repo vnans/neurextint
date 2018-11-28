@@ -48,7 +48,7 @@ class Inscrit
     protected $created;
 
    
-    public function onPrePersist()
+    public function __construct()
     {
         $this->created = new \DateTime("now");
     }

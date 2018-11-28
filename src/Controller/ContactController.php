@@ -37,7 +37,13 @@ class ContactController extends AbstractController
             $em->persist($contact);
             $em->flush();
 
-            return $this->redirectToRoute('contact_index');
+            $this->addFlash('info','Message envoyé'); // message info
+
+            return $this->render('contact/new.html.twig', [
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ]);
+           # return $this->redirectToRoute('contact_index');
         }
 
         return $this->render('contact/new.html.twig', [

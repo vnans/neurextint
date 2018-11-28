@@ -35,12 +35,22 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/contact/new, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/inscrit/new/, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: ROLE_ADMIN }
         - { path: ^/resetting, role: ROLE_ADMIN }
         - { path: ^/admin, role: ROLE_ADMIN }
-        - { path: ^/inscrit/, role: ROLE_ADMIN }
+        - { path: ^/inscrit/index, role: ROLE_ADMIN }
         - { path: ^/register/, role: ROLE_ADMIN }
-        - { path: ^/formation/new/, role: ROLE_ADMIN }
+        - { path: ^/contact/, role: ROLE_ADMIN }
+        - { path: ^/formation/new, role: ROLE_ADMIN }
+        - { path: ^/formation/edit, role: ROLE_ADMIN }
+        - { path: ^/formation/indexadmin, role: ROLE_ADMIN }
+        - { path: ^/formation/show, role: ROLE_ADMIN }
+        - { path: ^/formation/admin, role: ROLE_ADMIN }        
+        - { path: ^/inscrit/, role: ROLE_ADMIN } 
+
+       
 
         

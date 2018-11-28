@@ -4,6 +4,11 @@
 
 {% block body %}
    {#    #}
+   {% for message in app.flashes('infoInscrit') %}
+        <div class="alert alert-success text-center" role="alert">
+            {{ message }} <a href=" {{ path('default') }} ">Rétourner à l'accueil </a>
+        </div>
+        {% endfor %}
 <section class="main-section client-part" id="client">
         <!--main-section client-part-start-->
         <div class="container">
@@ -60,7 +65,7 @@
                         </div>
                         <div class="service-list-col2"> 
                             <h3>Prérequis</h3>
-                            <p>La connaissance parfaite de l langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
+                            <p>La connaissance parfaite de la langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
                         </div>
                     </div>
                     <div class="service-list">
