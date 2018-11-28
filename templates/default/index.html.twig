@@ -7,13 +7,13 @@
 		<!--header-start-->
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="img/vlogo.png" alt=""></a>
+				<a href="#"><img src=" {{ asset('img/vlogo.png') }} " alt="vlogo"></a>
 			</figure>
 			<h1 class="animated fadeInDown delay-07s" style="color:orange" >NEUTREX <span style="color:white">int</span></h1>
 			<ul class="we-create animated fadeInUp delay-1s">
 				<li> <h2 style="color:green" >Expertise in Motion</h2></li>
 			</ul>
-			<a class="link animated fadeInUp delay-1s servicelink" href="#service">Contactez-nous</a>
+			<a class="link animated fadeInUp delay-1s servicelink" href="{{ path('contact_new')}}">Contactez-nous</a>
 		</div>
 	</header>
 	<!--header-end-->
@@ -126,7 +126,7 @@ sure.</p>
 							<h3>Sensibilisation</h3>
 							<p>Mines. </p>
 							<p>Restes d'explosifs de guerre. </p>
-							<p><a href="">Suite ...</a> </p>
+							<p><a href=" {{ path('formation_index') }} ">Suite ...</a> </p>
 						</div>
 					</div>
 					<div class="featured-box">
@@ -136,7 +136,7 @@ sure.</p>
 						<div class="featured-box-col2 wow fadeInRight delay-04s">
 							<h3>NEDEX (EOD) niveau 1-2-3</h3>
 							
-							<p><a href="">Suite ...</a> </p>
+							<p><a href="{{ path('formation_index') }}">Suite ...</a> </p>
 						</div>
 					</div>
 					<div class="featured-box">
@@ -147,7 +147,7 @@ sure.</p>
 							<h3>NEDEX (EOD) niveau 3+</h3>
 							<p>Chargement chimique. </p>
 							<p>IEEI (IEDD). </p>
-							<p><a href="">Suite ...</a> </p>
+							<p><a href="{{ path('formation_index') }}">Suite ...</a> </p>
 						</div>
 						
 					</div>
@@ -160,7 +160,7 @@ sure.</p>
 							<h3>Contre EEI (C- EID)</h3>
 							<p>Fouille operationnelle. </p>
 							<p>IEEI (IEDD). </p>
-							<p><a href="">Suite ...</a> </p>
+							<p><a href="{{ path('formation_index') }}">Suite ...</a> </p>
 						</div>
 					</div>
 					

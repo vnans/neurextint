@@ -1,5 +1,31 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+
+
 {% block fos_user_content %}
-{% include "@FOSUser/Profile/show_content.html.twig" %}
+	<div class="container" style="background-color:white; color: green ;" >
+		<section class="main-section contact" id="contact">
+			
+			<div class="row">
+				<div class="col-lg-3 wow fadeInLeft">
+					
+					
+					
+				</div>
+				<div class="col-lg-6 col-sm-12 wow fadeInUp delay-05s">
+				<h3><a href="{{ path('default') }} ">Accueil</a></h3>
+				<h2 style="color:green;">Espace admin</h2>
+						
+							{% include "@FOSUser/Profile/show_content.html.twig" %}
+													
+				</div>
+				<div class="col-lg-3  wow fadeInLeft">
+					
+					
+					
+				</div>
+			</div>
+		</section>
+	</div>
+
 {% endblock fos_user_content %}
