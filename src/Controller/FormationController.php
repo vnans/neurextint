@@ -60,7 +60,7 @@ class FormationController extends AbstractController
             $em->persist($formation);
             $em->flush();
 
-            return $this->redirectToRoute('formation_index');
+            return $this->redirectToRoute('formation_indexadmin');
         }
 
         return $this->render('formation/new.html.twig', [
@@ -96,7 +96,8 @@ class FormationController extends AbstractController
             
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('formation_index', ['id' => $formation->getId()]);
+          #  return $this->redirectToRoute('formation_index', ['id' => $formation->getId()]);
+            return $this->redirectToRoute('formation_indexadmin',['id' => $formation->getId()]);
         }
 
         return $this->render('formation/edit.html.twig', [
