@@ -22,6 +22,9 @@
 
 
         {% endblock %}
+       {#  chat box  #}
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="47f974a7-17e0-4816-a74c-0d92617f026b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+         {# fin  chat box  #}
     </head>
 
     <!--main-nav-start-->
@@ -30,7 +33,7 @@
 			<div class="container" >
 				<ul class="main-nav">
 					
-						<li><a href="{{path('default')}}">Présentation</a></li>
+					<li><a href="{{ path('activite') }}">Operations</a></li>	
 				
 					
 					<li><a href="{{path('activite')}}">Liste des activités</a></li>
@@ -39,6 +42,7 @@
 					<li><a href="#team">Team</a></li> #}
 
 					<li><a href="{{ path('formation_index') }}">Formations</a></li>
+					
 					<li><a href=" {{ path('contact_new')}} ">Contact</a></li>
 					
 					 
@@ -88,7 +92,7 @@
 
 <footer class="footer">
 		<div class="container">
-			<div class="footer-logo"><a href="#"><img src="{{ asset('img/slogo.png')}}" alt=""></a></div>
+			<div class="footer-logo">{# <a href="#"><img src="{{ asset('img/slogo.png')}}" alt=""></a> #}</div>
 			<span class="copyright">&copy; Neutrex-int.</span>
 			<div class="credits">
 				<div class="container" >

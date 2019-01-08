@@ -35,7 +35,7 @@
                 <h6>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</h6>
            </p>
             <p><h6>
-                Les formations Neutrex-int technique proposées ainsi que l'utilisation maximale d'exercices pratique se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
+                Les formations Neutrex-int technique proposées ainsi que l'utilisation maximale d'exercices pratiques se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
             </h6></p>
             <div class="row">
                 <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
@@ -110,7 +110,7 @@
         <!--main-section-start-->
         <div class="container">
             <h2>Liste de nos formations</h2>
-            <h6>Nous sommes Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h6>
+            <h6>Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h6>
             {# <div class="portfolioFilter">
                 <ul class="Portfolio-nav wow fadeIn delay-02s">
                     <li><a href="#" data-filter="*" class="current">All</a></li>
@@ -123,7 +123,7 @@
 
         </div>
         <div class="portfolioContainer wow fadeInUp delay-04s">
-            {% for formation in formations %}
+           {#  {% for formation in formations %}
             <div class=" Portfolio-box printdesign">
                
                 <a href="{{ path('inscrit_new', {'id': formation.id}) }}"><img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}"></a>
@@ -132,7 +132,21 @@
                   <p>{{ formation.duree }}</p>
                 <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}"> <button class="btn btn-success" >S'incrire</button> </a></p>
             </div>
-             {% endfor %}
+             {% endfor %} #}
+{% for formation in formations %}
+    <div class="featured-box">
+                        <div class="featured-box-col1 wow fadeInRight delay-02s">
+                            <img src=" {{ asset('img/FORMATION1.jpg')}} " alt="FORMATION1"> 
+                        </div>
+                        <div class="featured-box-col2 wow fadeInRight delay-02s">
+                            <h3>{{ formation.theme}}</h3>
+                            <p> <strong>{{ formation.soustheme }}</strong> </p>
+                            <p>  <strong>{{ formation.duree }}</strong> </p>
+                            <p><a href=" {{ path('formation_show',{'id':formation.id }) }} "> <button class="btn btn-warning">Plus d'informations</button> </a> </p>
+                        </div>
+                    </div>
+{% endfor %}
+             
   {#           <div class="Portfolio-box webdesign">
                 <a href="img/Portfolio-pic2.jpg"><img src="img/Portfolio-pic2.jpg" alt=""></a>
                 <h3>Luca Theme</h3>
