@@ -16,6 +16,13 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+    /**
+     * @Route("/vnans", name="vnans")
+     */
+    public function index2()
+    {
+        return $this->render('default/index2.html.twig');
+    }
 
     /**
      * @Route("/activite", name="activite")
