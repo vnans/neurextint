@@ -1,0 +1,108 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}les Clients{% endblock %}
+
+{% block body %}
+    <h1>Liste des Clients </h1>
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Liste des clients</h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Nomprenoms</th>
+                      <th>Contact</th>
+
+
+                      <th>Dateinscription</th>
+                      <th>Datefin</th>
+                      <th>Status</th>
+                      <th>actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+              {% for client in clients %}
+                  <tr>
+                      <td>{{ client.id }}</td>
+                      <td>{{ client.nomprenoms }}</td>
+
+
+                      <td>{{ client.contact }}</td>
+                        <td>{{ client.dateinscription ? client.dateinscription|date('d-m-y') : '' }}</td>
+                      <td>{{ client.datefin ? client.datefin|date('d-m-y') : '' }}</td>
+                      <td>
+                        {% if  date(client.datefin) >  date()    %}
+                        <a href="#" class="btn btn-success btn-circle">
+                          <i class="fas fa-check"></i>
+                        </a>
+                        <span>abonnement actif</span>
+                      {% else %}
+                      <a href="#" class="btn btn-danger btn-circle btn-sm">
+                        <i class="fas fa-check"></i>
+                      </a>
+                        <span>abonnement expiré</span>
+                      {% endif %}
+
+                      </td>
+                      <td>
+                          <a href="{{ path('client_show', {'id': client.id}) }}">Détails</a>
+                          <a href="{{ path('client_edit', {'id': client.id}) }}">Modifier</a>
+                      </td>
+                  </tr>
+              {% else %}
+                  <tr>
+                      <td colspan="8">Aucun clients trouvé </td>
+                  </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+
+        </div>
+
+
+      </div>
+
+
+  </div>
+    <!-- <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomprenoms</th>
+                <th>Dateinscription</th>
+                <th>Photo</th>
+                <th>Contact</th>
+                <th>Datefin</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.nomprenoms }}</td>
+                <td>{{ client.dateinscription ? client.dateinscription|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ client.photo }}</td>
+                <td>{{ client.contact }}</td>
+                <td>{{ client.datefin ? client.datefin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ client.status }}</td>
+                <td>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> -->
+
+    <a href="{{ path('client_new') }}">Nouveau client</a>
+{% endblock %}

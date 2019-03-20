@@ -1,0 +1,70 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <h1>Détail du Client</h1>
+<div class="row">
+  <div class="col-md-6">
+    <tr>
+
+    <img src="{{ asset('/img/formation/') }}{{ client.photo }} " alt="" style="height:300px ; width:450px ;">
+
+    </tr>
+  </div>
+  <div class="col-md-6">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom et prénoms</th>
+                <td>{{ client.nomprenoms }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ client.contact }}</td>
+            </tr>
+            <tr>
+                <th>Date d'inscription</th>
+                <td>{{ client.dateinscription ? client.dateinscription|date('d-m-y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de fin</th>
+                <td>{{ client.datefin ? client.datefin|date('d-m-y') : '' }}</td>
+            </tr>
+
+
+
+            <tr>
+                <th>Status</th>
+                <td>
+                  {% if  date(client.datefin) >  date()    %}
+                  <a href="#" class="btn btn-success btn-circle">
+                    <i class="fas fa-check"></i>
+                  </a>
+                  <span>abonnement actif</span>
+                {% else %}
+                <a href="#" class="btn btn-danger btn-circle btn-sm">
+                  <i class="fas fa-check"></i>
+                </a>
+                  <span>abonnement expiré</span>
+                {% endif %}
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+    <a href="{{ path('client_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('client_edit', {'id': client.id}) }}"> Modifier</a>
+
+    <!-- {{ include('client/_delete_form.html.twig') }} -->
+{% endblock %}
