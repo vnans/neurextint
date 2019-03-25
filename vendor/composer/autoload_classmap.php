@@ -12,6 +12,7 @@ return array(
     'App\\Controller\\DefaultController' => $baseDir . '/src/Controller/DefaultController.php',
     'App\\Controller\\FormationController' => $baseDir . '/src/Controller/FormationController.php',
     'App\\Controller\\InscritController' => $baseDir . '/src/Controller/InscritController.php',
+    'App\\Controller\\VenanceNdriController' => $baseDir . '/src/Controller/VenanceNdriController.php',
     'App\\Entity\\Client' => $baseDir . '/src/Entity/Client.php',
     'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
     'App\\Entity\\Formation' => $baseDir . '/src/Entity/Formation.php',

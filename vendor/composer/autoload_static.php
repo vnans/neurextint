@@ -445,6 +445,7 @@ class ComposerStaticInit84cce3bc417107414e3c6a7a9debd273
         'App\\Controller\\DefaultController' => __DIR__ . '/../..' . '/src/Controller/DefaultController.php',
         'App\\Controller\\FormationController' => __DIR__ . '/../..' . '/src/Controller/FormationController.php',
         'App\\Controller\\InscritController' => __DIR__ . '/../..' . '/src/Controller/InscritController.php',
+        'App\\Controller\\VenanceNdriController' => __DIR__ . '/../..' . '/src/Controller/VenanceNdriController.php',
         'App\\Entity\\Client' => __DIR__ . '/../..' . '/src/Entity/Client.php',
         'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
         'App\\Entity\\Formation' => __DIR__ . '/../..' . '/src/Entity/Formation.php',
