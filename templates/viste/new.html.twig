@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Viste{% endblock %}
+
+{% block body %}
+    <h1>Create new Viste</h1>
+
+    {{ include('viste/_form.html.twig') }}
+
+    <a href="{{ path('viste_index') }}">back to list</a>
+{% endblock %}

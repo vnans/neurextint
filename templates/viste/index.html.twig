@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Viste index{% endblock %}
+
+{% block body %}
+    <h1>Viste index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Moderechargement</th>
+                <th>Rattachement</th>
+                <th>Verificationid</th>
+                <th>Point</th>
+                <th>Bundle</th>
+                <th>Commentaire</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for viste in vistes %}
+            <tr>
+                <td>{{ viste.id }}</td>
+                <td>{{ viste.moderechargement }}</td>
+                <td>{{ viste.rattachement }}</td>
+                <td>{{ viste.verificationid }}</td>
+                <td>{{ viste.point }}</td>
+                <td>{{ viste.bundle }}</td>
+                <td>{{ viste.commentaire }}</td>
+                <td>
+                    <a href="{{ path('viste_show', {'id': viste.id}) }}">show</a>
+                    <a href="{{ path('viste_edit', {'id': viste.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('viste_new') }}">Create new</a>
+{% endblock %}

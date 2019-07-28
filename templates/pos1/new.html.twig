@@ -1,0 +1,11 @@
+{% extends 'base3.html.twig' %}
+
+{% block title %}New Pos1{% endblock %}
+
+{% block body %}
+    <h1>Create new Pos1</h1>
+
+    {{ include('pos1/_form.html.twig') }}
+
+    <a href="{{ path('pos1_index') }}">back to list</a>
+{% endblock %}

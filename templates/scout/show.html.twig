@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scout{% endblock %}
+
+{% block body %}
+    <h1>Scout</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ scout.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomprenoms</th>
+                <td>{{ scout.nomprenoms }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ scout.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Operateur</th>
+                <td>{{ scout.operateur }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ scout.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('scout_index') }}">back to list</a>
+
+    <a href="{{ path('scout_edit', {'id': scout.id}) }}">edit</a>
+
+    {{ include('scout/_delete_form.html.twig') }}
+{% endblock %}

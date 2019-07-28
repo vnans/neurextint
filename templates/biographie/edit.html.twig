@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Biographie{% endblock %}
+
+{% block body %}
+    <h1>Edit Biographie</h1>
+
+    {{ include('biographie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('biographie_index') }}">back to list</a>
+
+    {{ include('biographie/_delete_form.html.twig') }}
+{% endblock %}

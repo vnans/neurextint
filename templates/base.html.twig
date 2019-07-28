@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+       <!-- base pour neutrex-int  -->
         <meta charset="UTF-8">
         <title>{% block title %}Neutrex-int{% endblock %}</title>
 		<meta name="viewport" content="width=device-width, maximum-scale=1">
 		<link rel="icon" href="favicon.png" type="image/png">
 		<link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
 
-	
+
 
         {% block stylesheets %}
 		<link href='{{ asset('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}' rel='stylesheet' type='text/css'>
@@ -32,30 +33,30 @@
 			<!--main-nav-start-->
 			<div class="container" >
 				<ul class="main-nav">
-					
-					<li><a href="{{ path('activite') }}">Operations</a></li>	
-				
-					
+
+					<li><a href="{{ path('activite') }}">Operations</a></li>
+
+
 					<li><a href="{{path('activite')}}">Liste des activités</a></li>
 					<li class="small-logo"><a href="{{path('default')}}"><img src="{{ asset('img/slogo.png')}}" alt=""></a></li>
 					{# <li><a href="#client">Clients</a></li>
 					<li><a href="#team">Team</a></li> #}
 
 					<li><a href="{{ path('formation_index') }}">Formations</a></li>
-					
+
 					<li><a href=" {{ path('contact_new')}} ">Contact</a></li>
-					
-					 
+
+
 					  	{# <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li> #}
-					 
-					
-					
+
+
+
 
 				</ul>
 				<a class="res-nav_click" href="{{path('default')}}"><i class="fa fa-bars"></i></a>
 			</div>
 		</nav>
-	
+
 		<!--main-nav-end-->
 
     <body>
@@ -97,13 +98,13 @@
 			<div class="credits">
 				<div class="container" >
 						<ul class="main-nav">
-							
+
 							{% if is_granted('ROLE_ADMIN') %}
 							{% else %}
 								<li><a href="{{ path('admin') }}" style="color:green;">Espace Admin</a></li>
 							 {% endif %}
-					
-							
+
+
 						</ul>
 						<a class="res-nav_click" href="{{path('default')}}"><i class="fa fa-bars"></i></a>
 					</div>
@@ -120,7 +121,7 @@
 	<script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/classie.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/magnific-popup.js') }}"></script>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function(e) {
 
@@ -169,7 +170,7 @@
 				event.preventDefault();
 			});
 		})
-	
+
 		$(window).load(function() {
 
 

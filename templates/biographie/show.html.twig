@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biographie{% endblock %}
+
+{% block body %}
+    <h1>Biographie</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ biographie.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomprenoms</th>
+                <td>{{ biographie.nomprenoms }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ biographie.fonction }}</td>
+            </tr>
+            <tr>
+                <th>Annneedexperience</th>
+                <td>{{ biographie.annneedexperience }}</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <td>{{ biographie.grade }}</td>
+            </tr>
+            <tr>
+                <th>Operations</th>
+                <td>{{ biographie.operations }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ biographie.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('biographie_index') }}">back to list</a>
+
+    <a href="{{ path('biographie_edit', {'id': biographie.id}) }}">edit</a>
+
+    {{ include('biographie/_delete_form.html.twig') }}
+{% endblock %}

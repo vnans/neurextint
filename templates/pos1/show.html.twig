@@ -1,0 +1,90 @@
+{% extends 'base3.html.twig' %}
+
+{% block title %}Pos1{% endblock %}
+
+{% block body %}
+    <h1>Pos1</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pos1.id }}</td>
+            </tr>
+            <tr>
+                <th>Msisdn</th>
+                <td>{{ pos1.msisdn }}</td>
+            </tr>
+            <tr>
+                <th>Dealer</th>
+                <td>{{ pos1.dealer }}</td>
+            </tr>
+            <tr>
+                <th>Nomdealer</th>
+                <td>{{ pos1.nomdealer }}</td>
+            </tr>
+            <tr>
+                <th>Cet</th>
+                <td>{{ pos1.cet }}</td>
+            </tr>
+            <tr>
+                <th>Nompos</th>
+                <td>{{ pos1.nompos }}</td>
+            </tr>
+            <tr>
+                <th>Autrecontact</th>
+                <td>{{ pos1.autrecontact }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ pos1.localisation }}</td>
+            </tr>
+            <tr>
+                <th>Niveaustock</th>
+                <td>{{ pos1.niveaustock }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ pos1.status }}</td>
+            </tr>
+            <tr>
+                <th>Account</th>
+                <td>{{ pos1.account }}</td>
+            </tr>
+            <tr>
+                <th>Profile</th>
+                <td>{{ pos1.profile }}</td>
+            </tr>
+            <tr>
+                <th>Localite</th>
+                <td>{{ pos1.localite }}</td>
+            </tr>
+            <tr>
+                <th>Possegntl</th>
+                <td>{{ pos1.possegntl }}</td>
+            </tr>
+            <tr>
+                <th>Possegreg</th>
+                <td>{{ pos1.possegreg }}</td>
+            </tr>
+            <tr>
+                <th>Rgm30</th>
+                <td>{{ pos1.rgm30 }}</td>
+            </tr>
+            <tr>
+                <th>Smartphone</th>
+                <td>{{ pos1.smartphone }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ pos1.niveau }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pos1_index') }}">back to list</a>
+
+    <a href="{{ path('pos1_edit', {'id': pos1.id}) }}">edit</a>
+
+    {{ include('pos1/_delete_form.html.twig') }}
+{% endblock %}

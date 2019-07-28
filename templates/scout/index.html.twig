@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scout index{% endblock %}
+
+{% block body %}
+    <h1>Scout index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomprenoms</th>
+                <th>Telephone</th>
+                <th>Operateur</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for scout in scouts %}
+            <tr>
+                <td>{{ scout.id }}</td>
+                <td>{{ scout.nomprenoms }}</td>
+                <td>{{ scout.telephone }}</td>
+                <td>{{ scout.operateur }}</td>
+                <td>{{ scout.status }}</td>
+                <td>
+                    <a href="{{ path('scout_show', {'id': scout.id}) }}">show</a>
+                    <a href="{{ path('scout_edit', {'id': scout.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('scout_new') }}">Create new</a>
+{% endblock %}

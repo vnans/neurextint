@@ -1,0 +1,67 @@
+{% extends 'base3.html.twig' %}
+
+{% block title %}Pos1 index{% endblock %}
+
+{% block body %}
+    <h1>Pos1 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Msisdn</th>
+                <th>Dealer</th>
+                <th>Nomdealer</th>
+                <th>Cet</th>
+                <th>Nompos</th>
+                <th>Autrecontact</th>
+                <th>Localisation</th>
+                <th>Niveaustock</th>
+                <th>Status</th>
+                <th>Account</th>
+                <th>Profile</th>
+                <th>Localite</th>
+                <th>Possegntl</th>
+                <th>Possegreg</th>
+                <th>Rgm30</th>
+                <th>Smartphone</th>
+                <th>Niveau</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pos1 in pos1s %}
+            <tr>
+                <td>{{ pos1.id }}</td>
+                <td>{{ pos1.msisdn }}</td>
+                <td>{{ pos1.dealer }}</td>
+                <td>{{ pos1.nomdealer }}</td>
+                <td>{{ pos1.cet }}</td>
+                <td>{{ pos1.nompos }}</td>
+                <td>{{ pos1.autrecontact }}</td>
+                <td>{{ pos1.localisation }}</td>
+                <td>{{ pos1.niveaustock }}</td>
+                <td>{{ pos1.status }}</td>
+                <td>{{ pos1.account }}</td>
+                <td>{{ pos1.profile }}</td>
+                <td>{{ pos1.localite }}</td>
+                <td>{{ pos1.possegntl }}</td>
+                <td>{{ pos1.possegreg }}</td>
+                <td>{{ pos1.rgm30 }}</td>
+                <td>{{ pos1.smartphone }}</td>
+                <td>{{ pos1.niveau }}</td>
+                <td>
+                    <a href="{{ path('pos1_show', {'id': pos1.id}) }}">show</a>
+                    <a href="{{ path('pos1_edit', {'id': pos1.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pos1_new') }}">Create new</a>
+{% endblock %}
