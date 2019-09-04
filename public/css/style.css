@@ -404,13 +404,13 @@ img {
 
 /* Clients
 ---------------------------------*/
-.client-part1{
+.client-part01{
 	background:url(../img/classew.jpg) center center no-repeat;
 	background-size:cover;
 	padding:200px 0;
 	text-align:center;
 }
-.client-part2{
+.client-part02{
 	background:url(../img/Activites.jpg) center center no-repeat;
 	background-size:cover;
 	padding:200px 0;
