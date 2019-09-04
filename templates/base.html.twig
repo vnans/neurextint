@@ -37,17 +37,17 @@
 					<li><a href="{{ path('activite') }}">Operations</a></li>
 
 
+
 					<li><a href="{{path('activite')}}">Liste des activités</a></li>
 					<li class="small-logo"><a href="{{path('default')}}"><img src="{{ asset('img/slogo.png')}}" alt=""></a></li>
 					{# <li><a href="#client">Clients</a></li>
 					<li><a href="#team">Team</a></li> #}
-
 					<li><a href="{{ path('formation_index') }}">Formations</a></li>
-
-					<li><a href=" {{ path('contact_new')}} ">Contact</a></li>
-
-
-					  	{# <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li> #}
+					<li><a href=" {{ path('contact_new')}} ">Contacts</a></li>
+          {% if is_granted('ROLE_ADMIN') %}
+          {% else %}
+            <li><a href="{{ path('admin') }}" >Se connecter</a></li>
+           {% endif %}
 
 
 
@@ -99,10 +99,7 @@
 				<div class="container" >
 						<ul class="main-nav">
 
-							{% if is_granted('ROLE_ADMIN') %}
-							{% else %}
-								<li><a href="{{ path('admin') }}" style="color:green;">Espace Admin</a></li>
-							 {% endif %}
+
 
 
 						</ul>
