@@ -6,6 +6,7 @@
 /translations/
 /tests/
 /.htaccess
+/vendor
 
 ###< symfony/framework-bundle ###
 

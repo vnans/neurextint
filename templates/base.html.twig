@@ -34,16 +34,17 @@
 			<div class="container" >
 				<ul class="main-nav">
 
-					<li><a href="{{ path('activite') }}">Operations</a></li>
 
 
 
-					<li><a href="{{path('activite')}}">Liste des activités</a></li>
+
+					<li><a href="{{path('activite')}}">Liste de nos activités</a></li>
+          <li><a href="{{ path('activite') }}">Nos operations</a></li>
 					<li class="small-logo"><a href="{{path('default')}}"><img src="{{ asset('img/slogo.png')}}" alt=""></a></li>
 					{# <li><a href="#client">Clients</a></li>
 					<li><a href="#team">Team</a></li> #}
-					<li><a href="{{ path('formation_index') }}">Formations</a></li>
-					<li><a href=" {{ path('contact_new')}} ">Contacts</a></li>
+					<li><a href="{{ path('formation_index') }}">Nos formations</a></li>
+					<li><a href=" {{ path('contact_new')}} ">Nous Contacter</a></li>
           {% if is_granted('ROLE_ADMIN') %}
           {% else %}
             <li><a href="{{ path('admin') }}" >Se connecter</a></li>
