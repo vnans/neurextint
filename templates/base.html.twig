@@ -46,13 +46,10 @@
 					<li><a href="{{ path('formation_index') }}">Nos formations</a></li>
 					<li><a href=" {{ path('contact_new')}} ">Nous Contacter</a></li>
           {% if is_granted('ROLE_ADMIN') %}
+          <li><a href="{{ path('admin') }}" >Se déconnecter</a></li>
           {% else %}
             <li><a href="{{ path('admin') }}" >Se connecter</a></li>
            {% endif %}
-
-
-
-
 				</ul>
 				<a class="res-nav_click" href="{{path('default')}}"><i class="fa fa-bars"></i></a>
 			</div>

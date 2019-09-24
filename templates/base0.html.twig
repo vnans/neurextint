@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <!-- base pour neutrex-int  -->
+        <meta charset="UTF-8">
+        <title>{% block title %}Neutrex-int{% endblock %}</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+        {% block stylesheets %}
+        <!-- Favicons -->
+      <link href="img2/favicon.png" rel="icon">
+      <link href="img2/apple-touch-icon.png" rel="apple-touch-icon">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+      <!-- Bootstrap CSS File -->
+      <link href="{{  asset(' lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+      <!-- Libraries CSS Files -->
+      <link href="{{  asset(' lib2/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+      <link href="{{  asset(' lib2/animate/animate.min.css')}}" rel="stylesheet">
+      <link href="{{  asset(' lib2/venobox/venobox.css')}}" rel="stylesheet">
+      <link href="{{  asset(' lib2/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+      <!-- Main Stylesheet File -->
+      <link href="{{ asset('css2/style.css') }} " rel="stylesheet">
+
+        {% endblock %}
+       {#  chat box  #}
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="47f974a7-17e0-4816-a74c-0d92617f026b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+         {# fin  chat box  #}
+    </head>
+
+    <header id="header">
+      <div class="container">
+
+        <div id="logo" class="pull-left">
+          <!-- Uncomment below if you prefer to use a text logo -->
+          <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+          <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
+        </div>
+
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="#intro">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#supporters">Sponsors</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- #header -->
+		<!--main-nav-end-->
+
+    <body>
+
+
+
+
+
+
+
+
+
+
+
+
+        {% block body %}{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--==========================
+            Footer
+          ============================-->
+          <footer id="footer">
+            <div class="footer-top">
+              <div class="container">
+                <div class="row">
+
+                  <div class="col-lg-3 col-md-6 footer-info">
+                    <img src="img/logo.png" alt="TheEvenet">
+                    <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+                      <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                      A108 Adam Street <br>
+                      New York, NY 535022<br>
+                      United States <br>
+                      <strong>Phone:</strong> +1 5589 55488 55<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+                    <div class="social-links">
+                      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                      <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                      <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="copyright">
+                &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
+              </div>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+                -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+          </footer><!-- #footer -->
+
+          <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+        {% block javascripts %}
+        <!-- JavaScript Libraries -->
+        <script src=" {{ asset('lib2/jquery/jquery.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/jquery/jquery-migrate.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/bootstrap/js/bootstrap.bundle.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/easing/easing.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/superfish/hoverIntent.js') }}  "></script>
+        <script src=" {{ asset('lib2/superfish/superfish.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/wow/wow.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/venobox/venobox.min.js') }}  "></script>
+        <script src=" {{ asset('lib2/owlcarousel/owl.carousel.min.js') }}  "></script>
+
+        <!-- Contact Form JavaScript File -->
+        <script src=" {{ asset('') }}  contactform/contactform.js"></script>
+
+        <!-- Template Main Javascript File -->
+        <script src=" {{ asset('') }}  js/main.js"></script>
+		$(document).ready(function(e) {
+
+			$('#test').scrollToFixed();
+			$('.res-nav_click').click(function() {
+				$('.main-nav').slideToggle();
+				return false
+
+			});
+
+      // $('.Portfolio-box').magnificPopup({
+      //   delegate: 'a',
+      //   type: 'image'
+      // });
+
+		});
+	</script>
+
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset: 100
+		});
+		wow.init();
+	</script>
+
+
+	<script type="text/javascript">
+		$(window).load(function() {
+
+			$('.main-nav li a, .servicelink').bind('click', function(event) {
+				var $anchor = $(this);
+
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 102
+				}, 1500, 'easeInOutExpo');
+				/*
+				if you don't want to use the easing effects:
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000);
+				*/
+				if ($(window).width() < 768) {
+					$('.main-nav').hide();
+				}
+				event.preventDefault();
+			});
+		})
+
+		$(window).load(function() {
+
+
+			var $container = $('.portfolioContainer'),
+				$body = $('body'),
+				colW = 375,
+				columns = null;
+
+
+			$container.isotope({
+				// disable window resizing
+				resizable: true,
+				masonry: {
+					columnWidth: colW
+				}
+			});
+
+			$(window).smartresize(function() {
+				// check if columns has changed
+				var currentColumns = Math.floor(($body.width() - 30) / colW);
+				if (currentColumns !== columns) {
+					// set new column count
+					columns = currentColumns;
+					// apply width to container manually, then trigger relayout
+					$container.width(columns * colW)
+						.isotope('reLayout');
+				}
+
+			}).smartresize(); // trigger resize to set container width
+			$('.portfolioFilter a').click(function() {
+				$('.portfolioFilter .current').removeClass('current');
+				$(this).addClass('current');
+
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+
+					filter: selector,
+				});
+				return false;
+			});
+
+		});
+	</script>
+        {% endblock %}
+    </body>
+</html>
