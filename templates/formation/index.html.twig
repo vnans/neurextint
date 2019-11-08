@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base0.html.twig' %}
 
 {% block title %}Formation index{% endblock %}
 
@@ -9,256 +9,184 @@
             {{ message }} <a href=" {{ path('default') }} ">Rétourner à l'accueil </a>
         </div>
         {% endfor %}
-<section class="main-section client-part01" id="client">
-        <!--main-section client-part-start-->
-        <div class="container">
-          {#   <b class="quote-right wow fadeInDown delay-03"><i class="fa fa-quote-right"></i></b> #}
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="client-part-haead wow fadeInDown delay-05">Formation à la gestion des risques associés aux explosifs, munitions, mines et à la menace terroriste</p>
-                </div>
+        <section id="introFormation">
+          <div class="intro-container wow fadeIn">
+            <h1 class="mb-4 pb-0">Formation à la gestion des risques associés aux explosifs, munitions, mines et à la menace terroriste
+</h1>
+
+          </div>
+        </section>
+        <main id="main" >
+          <!--==========================
+            Speaker Details Section
+          ============================-->
+          <section id="speakers-details" class="wow fadeIn">
+            <div class="container">
+              <div class="section-header">
+                <h2>Formation</h2>
+                <p>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</p>
+                <p>Les formations Neutrex-Int technique proposées ainsi que l'utilisation maximale d'exercices pratiques se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
+                </p>
             </div>
-            {# <ul class="client wow fadeIn delay-05s">
-                <li><a href="#">
-                <img src="{{ asset('img/client-pic1.jpg')}}" alt="">
-                <h3>James Bond</h3>
-                <span>License To Drink Inc.</span>
-            </a></li>
-            </ul> #}
+
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{asset('img/classew.jpg')}} " alt="Speaker 1" class="img-fluid">
+                </div>
+
+                <div class="col-md-6">
+                  <div class="details">
+                    <h2>Prérequis</h2>
+                    <p>La connaissance parfaite de la langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
+
+                    <!-- <div class="social">
+                      <a href=""><i class="fa fa-twitter"></i></a>
+                      <a href=""><i class="fa fa-facebook"></i></a>
+                      <a href=""><i class="fa fa-google-plus"></i></a>
+                      <a href=""><i class="fa fa-linkedin"></i></a>
+                    </div> -->
+                    <h3>Qualifications</h3>
+                    <p>A l'issue de la réussite de chaque cycle de formation, un diplôme équivalent à la formation est délivré.</p>
+
+                    <h3>Assurance qualité</h3>
+                    <p>Toutes nos formations bénéficient d'un contrôle assurance qualité effectué par un organisme externe et reconnus.</p>
+
+                    <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
+                  </div>
+                  <figure class="  text-right wow fadeInUp delay-02s">
+                 <img src="{{ asset('img/logoadem.png')}}" alt="">
+                 </figure>
+                </div>
+
+              </div>
+            </div>
+
+          </section>
+
+
+          <section id="speackers-details" class="wow fadeIn">
+            <div class="contaner">
+              <div class="section-header">
+                <h2>Spécialisation</h2>
+                <P>Spécificités des formations Neutrex-Int sont principalement axées sur la qualité des formations avec un haut niveau technique proposé ainsi que l’utilisation maximale d’exercice pratique se rapprochant le plus possible de la réalité. </P>
+                <p>Des formations plus larges basées sur la compréhension des problèmes pouvant déboucher sur plusieurs solutions.
+                </p>
+                <p>	Un pool d’experts en formation hautement qualifiés et expérimentés. </p>
+                <p>Tous nos formateurs sont certifié formateur. Le respect strict de la normalisation en vigueur.</p>
+          </div>
         </div>
-    </section>
-   <section class="main-section" id="service">
-        <!--main-section-start-->
-        <div class="container">
-            <h2>Formations</h2>
-           <p>
-                <h6>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</h6>
-           </p>
-            <p><h6>
-                Les formations Neutrex-Int technique proposées ainsi que l'utilisation maximale d'exercices pratiques se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
-            </h6></p>
-            <div class="row">
-                <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
+          </section>
+          <section id="speakers-details" class="wow fadeIn">
+            <div class="container">
+              <div class="section-header">
+                <h2>Liste des cours</h2>
+              <p></p>
+            </div>
 
-                    <figure class="  text-right wow fadeInUp delay-02s">
-                    <img src="{{ asset('img/format.jpg')}}" alt="">
-                    </figure>
-                    {# {% for formation in formations  %}
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <img src="{{ asset('img/FORMATION1.jpg')}}" alt="FORMATION1">
-                        </div>
-                         <div class="service-list-col2">
-                            <h3>{{ formation.theme }}</h3>
-                            <p>{{ formation.soustheme }}</p>
-                            <p>{{ formation.duree }}</p>
-                             <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}">S'incrire</a></p>
-                        </div>
-                    </div>
-                {% endfor %} #}
-
-                </div>
-                <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <i class="fa fa-magic"></i>
-                        </div>
-                        <div class="service-list-col2">
-                            <h3>Prérequis</h3>
-                            <p>La connaissance parfaite de la langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
-                        </div>
-                    </div>
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <i class="fa fa-magic"></i>
-                        </div>
-                        <div class="service-list-col2">
-                            <h3>Qualifications</h3>
-                            <p>A l'issue de la réussite de chaque cycle de formation, un diplôme équivalent à la formation est délivré.</p>
-                        </div>
-                    </div>
-                    <div class="service-list">
-                        <div class="service-list-col1">
-                            <i class="fa fa-magic"></i>
-                        </div>
-                        <div class="service-list-col2">
-                            <h3>Assurance qualité</h3>
-                            <p>Toutes nos formations bénéficient d'un contrôle assurance qualité effectué par un organisme externe et reconnus.</p>
-                        </div>
-                    </div>
-                     <figure class="  text-right wow fadeInUp delay-02s">
-                    <img src="{{ asset('img/logoadem.png')}}" alt="">
-                    </figure>
-                    {# <figure class="  text-right wow fadeInUp delay-02s">
-                    <img src="{{ asset('img/classew2.jpg')}}" alt="">
-                </figure> #}
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{asset('img/Formation.jpg') }}" alt="Speaker 1" class="img-fluid">
+                  <!-- <img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt=""> -->
                 </div>
 
+                <div class="col-md-6">
+                  <div class="details">
+                    <h2>Sensibilisation : <h3>Mines – REG – EEI (menace terroriste)-C-IED.</h3>  </h2>
+                    <h2>Education aux risques : <h3>Mines – REG – EEI (menace terroriste)-C-IED .</h3> </h2>
+                    <h2>NEDEX Niveau 1 : <h3> Déminage – Détecteurs – ID Mine – Généralités Mun. </h3> </h2>
+      							<h2>NEDEX Niveau 2 : <h3>REG et BAC – Magnétométrie- ID Mun</h3> </h2>
+      							<h2>NEDEX Niveau 3 : <h3>REG – ID Mun et Fct – Gestion activité NEDEX</h3> </h2>
+      							<h2>NEDEX Niveau 3+	Recherche :<h3>Plongeur démineur (A venir) ,Uranium appauvris ,Chargement chimique ,IEDD</h3> </h2>
+                    <h2>C-EEI	Fouille opérationnelle :	<h3>Sensibilisation à la menace EEI.</h3> </h2>
+                    <h2>PSSM Niveau 1 <h3>(Magasinier)</h3> </h2>
+                    <h2>PSSM Niveau 2 <h3>(Chef de dépôt)</h3> </h2>
+                    <h2>PSSM Niveau 3 <h3>(Inspecteur)</h3> </h2>
+                    <h2>WAM  <h3>(Armurerie – SAA - ALPC- – DDR – Destruction des armes)</h3>	</h2>
+                    <h2>Gestion de la qualité <h3>(A venir)</h3> </h2>
+
+                    </div>
+                </div>
+
+              </div>
+            </div>
+
+          </section>
+          <!--==========================
+            Schedule Section
+          ============================-->
+          <section id="schedule" class="section-with-bg">
+            <div class="container wow fadeInUp">
+              <div class="section-header">
+                <h2>Liste de nos formations</h2>
+                <!-- <p>Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</p> -->
+              </div>
+
+              <!-- <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+                </li>
+              </ul> -->
+
+              <h3 class="sub-heading">Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h3>
+
+              <div class="tab-content row justify-content-center">
+
+                <!-- Schdule Day 1 -->
+                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+                {% for formation in formations  %}
+
+                  <div class="row schedule-item">
+                    <div class="col-md-2"><time>{{formation.duree}}</time></div>
+                    <div class="col-md-10">
+                      <div class="speaker">
+                          <img src=" {{ asset('img/FORMATION1.jpg')}} " alt="FORMATION1">
+                      </div>
+                      <h4>{{formation.theme}}</h4>
+                      <p>{{formation.soustheme}}.</p>
+                      <p><a href=" {{ path('formation_show',{'id':formation.id }) }} "> <button class="btn btn-warning">Plus d'informations </button> </a></p>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+
+
+
+
+                </div>
+                <!-- End Schdule Day 1 -->
+
+                <!-- Schdule Day 2 -->
+                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+
+                </div>
+                <!-- End Schdule Day 2 -->
+
+                <!-- Schdule Day 3 -->
+                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+
+
+                </div>
+                <!-- End Schdule Day 2 -->
+
+              </div>
 
             </div>
 
-                {# <figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-                    <img src="{{ asset('img/classew2.jpg')}}" alt="">
-                </figure> #}
-
-            </div>
-        </div>
-    </section>
-    <!--main-section-end-->
-    <section class="main-section alabaster">
-  		<!--main-section alabaster-start-->
-  		<div class="container">
-  			<div class="row">
-  				<div class="col-lg-12 col-sm-12 featured-work">
-  					<h2 style="color:green">Formation</h2>
-  					<P class="padding-b">Spécificités des formations Neutrex-Int
-  Les spécificités des formations Neutrex-Int sont principalement axées sur la qualité des formations avec un haut niveau technique proposé ainsi que l’utilisation maximale d’exercice pratique se rapprochant le plus possible de la réalité. </P>
-  <p>Des formations plus larges basées sur la compréhension des problèmes pouvant déboucher sur plusieurs solutions.
-  </p>
-  							<p>
-  								Un pool d’experts en formation hautement qualifiés et expérimentés.
-  							</p>
-  							<p>
-  								Tous nos formateurs sont certifié formateur.
-  Le respect strict de la normalisation en vigueur.
-  							</p>
+          </section>
+        </main>
 
 
-  			</div>
-  		</div>
-  	</section>
-  	<!--main-section alabaster-end-->
-  <section class="main-section alabaster">
-  		<!--main-section alabaster-start-->
-  		<div class="container">
-  			<div class="row">
-  				<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
-  					<img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt="">
-  				</figure>
-  				<div class="col-lg-7 col-sm-8 featured-work">
-  					<h2>Liste des cours</h2>
-  					<P class="padding-b"></P>
-  					<div class="featured-box">
-  						<div class="featured-box-col1 wow fadeInRight delay-02s">
-  							<i class="fa fa-magic"></i>
-  						</div>
-  						<div class="featured-box-col2 wow fadeInRight delay-02s">
-
-  							<p>Sensibilisation : Mines – REG – EEI (menace terroriste)-C-IED. </p>
-  						</div>
-  					</div>
-  					<div class="featured-box">
-  						<div class="featured-box-col1 wow fadeInRight delay-04s">
-  							<i class="fa fa-magic"></i>
-  						</div>
-  						<div class="featured-box-col2 wow fadeInRight delay-04s">
-
-  							<p>Education aux risques : Mines – REG – EEI (menace terroriste)-C-IED . </p>
-  						</div>
-  					</div>
-  					<div class="featured-box">
-  						<div class="featured-box-col1 wow fadeInRight delay-06s">
-  							<i class="fa fa-magic"></i>
-  						</div>
-  						<div class="featured-box-col2 wow fadeInRight delay-06s">
-
-  							<p>NEDEX Niveau 1 : Déminage – Détecteurs – ID Mine – Généralités Mun. </p>
-  							<p>NEDEX Niveau 2 : REG et BAC – Magnétométrie- ID Mun</p>
-  							<p>NEDEX Niveau 3 : REG – ID Mun et Fct – Gestion activité NEDEX</p>
-  							<p>NEDEX Niveau 3+	Recherche :Plongeur démineur (A venir) ,Uranium appauvris ,Chargement chimique ,IEDD</p>
-
-  						</div>
-  					</div>
-  					<div class="featured-box">
-  						<div class="featured-box-col1 wow fadeInRight delay-04s">
-  							<i class="fa fa-magic"></i>
-  						</div>
-  						<div class="featured-box-col2 wow fadeInRight delay-04s">
-
-  							<p>C-EEI	Fouille opérationnelle :	Sensibilisation à la menace EEI. </p>
-  							<p>PSSM Niveau 1 (Magasinier)</p>
-  							<p>PSSM Niveau 2 (Chef de dépôt)</p>
-  							<p>PSSM Niveau 3 (Inspecteur)</p>
-  							<p>WAM (Armurerie – SAA - ALPC- – DDR – Destruction des armes)	</p>
-  							<p>Gestion de la qualité (A venir)</p>
-  						</div>
-  					</div>
-  					<a class="Learn-More" href="#">Lire la suite</a>
-  				</div>
-  			</div>
-  		</div>
-  	</section>
   	<!--main-section alabaster-end-->
 
-    <section class="main-section paddind" id="Portfolio">
-        <!--main-section-start-->
-        <div class="container">
-            <h2>Liste de nos formations</h2>
-            <h6>Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h6>
-            {# <div class="portfolioFilter">
-                <ul class="Portfolio-nav wow fadeIn delay-02s">
-                    <li><a href="#" data-filter="*" class="current">All</a></li>
-                    <li><a href="#" data-filter=".branding">Branding</a></li>
-                    <li><a href="#" data-filter=".webdesign">Web design</a></li>
-                    <li><a href="#" data-filter=".printdesign">Print design</a></li>
-                    <li><a href="#" data-filter=".photography">Photography</a></li>
-                </ul>
-            </div> #}
 
-        </div>
-        <div class="portfolioContainer wow fadeInUp delay-04s">
-           {#  {% for formation in formations %}
-            <div class=" Portfolio-box printdesign">
-
-                <a href="{{ path('inscrit_new', {'id': formation.id}) }}"><img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}"></a>
-                 <h3>{{ formation.theme }}</h3>
-                  <p>{{ formation.soustheme }}</p>
-                  <p>{{ formation.duree }}</p>
-                <p> <a href="{{ path('inscrit_new', {'id': formation.id}) }}"> <button class="btn btn-success" >S'incrire</button> </a></p>
-            </div>
-             {% endfor %} #}
-{% for formation in formations %}
-    <div class="featured-box">
-                        <div class="featured-box-col1 wow fadeInRight delay-02s">
-                            <img src=" {{ asset('img/FORMATION1.jpg')}} " alt="FORMATION1">
-                        </div>
-                        <div class="featured-box-col2 wow fadeInRight delay-02s">
-                            <h3>{{ formation.theme}}</h3>
-                            <p> <strong>{{ formation.soustheme }}</strong> </p>
-                            <p>  <strong>{{ formation.duree }}</strong> </p>
-                            <p><a href=" {{ path('formation_show',{'id':formation.id }) }} "> <button class="btn btn-warning">Plus d'informations </button> </a> </p>
-                        </div>
-                    </div>
-{% endfor %}
-
-  {#           <div class="Portfolio-box webdesign">
-                <a href="img/Portfolio-pic2.jpg"><img src="img/Portfolio-pic2.jpg" alt=""></a>
-                <h3>Luca Theme</h3>
-                <p>Web Design</p>
-            </div>
-            <div class=" Portfolio-box branding">
-                <a href="img/Portfolio-pic3.jpg"><img src="img/Portfolio-pic3.jpg" alt=""></a>
-                <h3>Uni Sans</h3>
-                <p>Branding</p>
-            </div>
-            <div class=" Portfolio-box photography">
-                <a href="img/Portfolio-pic4.jpg"><img src="img/Portfolio-pic4.jpg" alt=""></a>
-                <h3>Vinyl Record</h3>
-                <p>Photography</p>
-            </div>
-            <div class=" Portfolio-box branding">
-                <a href="img/Portfolio-pic5.jpg"><img src="img/Portfolio-pic5.jpg" alt=""></a>
-                <h3>Hipster</h3>
-                <p>Branding</p>
-            </div>
-            <div class=" Portfolio-box photography">
-                <a href="img/Portfolio-pic6.jpg"><img src="img/Portfolio-pic6.jpg" alt=""></a>
-                <h3>Windmills</h3>
-                <p>Photography</p>
-            </div>#}
-        </div>
-    </section>
-    <!--main-section-end-->
 
     <!-- <section class="business-talking">
 
@@ -301,48 +229,47 @@
     </table>
 
     <a href="{{ path('formation_new') }}">Create new</a> #}
-    <section class="main-section alabaster">
-    		<!--main-section alabaster-start-->
-    		<div class="container">
-    			<div class="row">
-    				<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
-    					<img src="{{asset('img/carte1.jpg')}} " alt="">
-    					{# <img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt=""> #}
-    				</figure>
-    				<div class="col-lg-7 col-sm-8 featured-work">
-    					<h2>Site de formation</h2>
-    					<P class="padding-b"></P>
-    					<div class="featured-box">
-    						<div class="featured-box-col1 wow fadeInRight delay-02s">
-    							<i class="fa fa-magic"></i>
-    						</div>
-    						<div class="featured-box-col2 wow fadeInRight delay-02s">
 
-    							<p>En Côte d’Ivoire, à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.. </p>
-    						</div>
-    					</div>
-    					<div class="featured-box">
-    						<div class="featured-box-col1 wow fadeInRight delay-04s">
-    							<i class="fa fa-magic"></i>
-    						</div>
-    						<div class="featured-box-col2 wow fadeInRight delay-04s">
+<main id="main">
+  <!--==========================
+    Venue Section
+  ============================-->
+  <section id="venue" class="wow fadeInUp">
 
-    							<p>Nous disposons d’infrastructures et d’équipements complets innovants et uniques. Nous bénéficions d’une coopération bénéfique avec les autorités de sécurité nationale.. </p>
-    						</div>
-    					</div>
-    					<div class="featured-box">
-    						<div class="featured-box-col1 wow fadeInRight delay-06s">
-    							<i class="fa fa-magic"></i>
-    						</div>
-    						<div class="featured-box-col2 wow fadeInRight delay-06s">
+    <div class="container-fluid">
 
-    							<p>Nous sommes en mésure de proposer des simulations et scénarios à grande échelle incluant l’emploi d’explosif pour des démolitions de masse. </p>
-    						</div>
-    					</div>
-    					{#  <a class="Learn-More" href="#">Learn More</a> #}
-    				</div>
-    			</div>
-    		</div>
-    	</section>
+      <div class="section-header">
+        <h2>Site de formation</h2>
+        <!-- <p>Event venue location info and gallery</p> -->
+      </div>
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 venue-map">
+<!-- <img src="{{asset('img/carte1.jpg')}} " alt=""> -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179770.91817239107!2d-4.116579238126628!3d5.3536818452483335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan!5e0!3m2!1sfr!2sci!4v1569943657994!5m2!1sfr!2sci" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+        </div>
+
+
+        <div class="col-lg-6 venue-info">
+          <div class="row justify-content-center">
+            <div class="col-11 col-lg-8">
+              <h3>Abidjan, Cote d'Ivoire</h3>
+              <p>En Côte d’Ivoire, à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.. </p>
+              <p>Nous disposons d’infrastructures et d’équipements complets innovants et uniques. Nous bénéficions d’une coopération bénéfique avec les autorités de sécurité nationale.. </p>
+              <p>Nous sommes en mésure de proposer des simulations et scénarios à grande échelle incluant l’emploi d’explosif pour des démolitions de masse. </p>
+
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
     	<!--main-section alabaster-end-->
 {% endblock %}

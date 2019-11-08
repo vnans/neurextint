@@ -1,9 +1,50 @@
-{% extends 'base.html.twig' %}
+{% extends 'base0.html.twig' %}
 
 {% block title %}Biographie{% endblock %}
 
 {% block body %}
-    <h1>Biographie</h1>
+<main id="main" class="main-page">
+
+  <!--==========================
+    Speaker Details Section
+  ============================-->
+  <section id="speakers-details" class="wow fadeIn">
+    <div class="container">
+      <div class="section-header">
+        <h2>Biographie</h2>
+        <p>professionnel</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{asset('img/formation/')}}{{ biographie.image }}" alt="Speaker 1" class="img-fluid">
+        </div>
+
+        <div class="col-md-6">
+          <div class="details">
+            <h2>{{ biographie.nomprenoms }}</h2>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google-plus"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p>Grade : {{ biographie.grade}}</p>
+            <p>Fonction : {{ biographie.fonction}}</p>
+            <p>années Experiences  : {{ biographie.annneedexperience}}</p>
+            <p>Operations  : {{ biographie.operations}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+
+    <!-- <h1>Biographie</h1>
 
     <table class="table">
         <tbody>
@@ -42,5 +83,5 @@
 
     <a href="{{ path('biographie_edit', {'id': biographie.id}) }}">edit</a>
 
-    {{ include('biographie/_delete_form.html.twig') }}
+    {{ include('biographie/_delete_form.html.twig') }} -->
 {% endblock %}

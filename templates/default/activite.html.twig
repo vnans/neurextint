@@ -1,326 +1,274 @@
-	{% extends 'base.html.twig' %}
+	{% extends 'base0.html.twig' %}
 {% block title %}Liste des activités{% endblock %}
 {% block body %}
-<section class="main-section client-part02" id="client">
-        <!--main-section client-part-start-->
-        <div class="container">
-          {#   <b class="quote-right wow fadeInDown delay-03"><i class="fa fa-quote-right"></i></b> #}
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="client-part-haead wow fadeInDown delay-05">
-Déminage ,Gestion du stockage des armes et munitions ,Dépollution de champs de bataille (DCB) ...</p>
-                </div>
-            </div>
-            {# <ul class="client wow fadeIn delay-05s">
-                <li><a href="#">
-                <img src="{{ asset('img/client-pic1.jpg')}}" alt="">
-                <h3>James Bond</h3>
-                <span>License To Drink Inc.</span>
-            </a></li>
-            </ul> #}
-        </div>
-    </section>
-<section class="main-section" id="service">
-		<!--main-section-start-->
-		<div class="container">
-			<h2>Nos Services</h2>
-			<h3>Gestion du stockage des armes et munitions</h3>
-							<p>La gestion inappropriée des stocks de munitions et d’explosifs conventionnels pose d’importants risques de sécurité.
-							 </p>
-							 <p>
-							 	Le risque le plus saillant posé par l'accumulation de munitions conventionnelles excédentaires est celui d'événements explosifs dans des aires de stockage de munitions. Les explosions de dépôt de munitions font la « Une » des journaux plusieurs fois au cours d’une seule année.
+<section id="introActivites">
+  <div class="intro-container wow fadeIn">
+    <h1 class="mb-4 pb-0">Déminage ,Gestion du stockage des armes et munitions ,Dépollution de champs de bataille (DCB) ...</h1>
 
-							 </p>
-							 <p>
-							 	Ces événements résultent en d'importants dégâts, une destruction étendue des infrastructures et la perturbation des moyens de subsistance de communautés entières.
-								En plus de la souffrance humaine immédiate, de telles explosions peuvent avoir des effets épouvantables sur l'environnement et, dans des États avec des moyens limités pour financer les coûts d'un nettoyage techniquement difficile, les populations locales, particulièrement les enfants, sont bien trop souvent exposés au risque de blessure ou de mort en raison des munitions explosives qui ont tendance à polluer de larges zones pendant des périodes prolongées et bien après l'explosion.
-							</p>
-						<p>
-							Un autre risque sérieux qui ne devrait pas être négligé est celui du détournement des munitions des stocks mal gérés et non sécurisés vers le commerce illicite. Les munitions détournées des réserves nationales peuvent trouver usage dans les guerres civiles, les insurrections, le terrorisme, le crime et autres violences armées, et ainsi attiser l'instabilité nationale et régionale et menacer la sécurité des États.
-.
-						</p>
+  </div>
+</section>
 
-			<div class="row">
-				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/MINE1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Déminage </h3>
-							<p>Le déminage de champ de mines incluant la formation et l’équipement des démineurs, l’éducation aux risques des mines, enquêtes technique et non technique, cartographie, assurance qualité, marquage du danger, documentation post-dépollution et la remise à disposition des terres..</p>
-						</div>
+		<main id="main">
+			<!--==========================
+				Schedule Section
+			============================-->
+			<section id="schedule" class="section-with-bg">
+				<div class="container wow fadeInUp">
+					<div class="section-header">
+						<h2>Nos activités</h2>
+						<h3>Gestion du stockage des armes et munitions</h3>
+ 					 <p>La gestion inappropriée des stocks de munitions et d’explosifs conventionnels pose d’importants risques de sécurité.
+ 						</p>
+ 						<p>
+ 						 Le risque le plus saillant posé par l'accumulation de munitions conventionnelles excédentaires est celui d'événements explosifs dans des aires de stockage de munitions. Les explosions de dépôt de munitions font la « Une » des journaux plusieurs fois au cours d’une seule année.
+
+ 						</p>
+ 						<p>
+ 						 Ces événements résultent en d'importants dégâts, une destruction étendue des infrastructures et la perturbation des moyens de subsistance de communautés entières.
+ 						 En plus de la souffrance humaine immédiate, de telles explosions peuvent avoir des effets épouvantables sur l'environnement et, dans des États avec des moyens limités pour financer les coûts d'un nettoyage techniquement difficile, les populations locales, particulièrement les enfants, sont bien trop souvent exposés au risque de blessure ou de mort en raison des munitions explosives qui ont tendance à polluer de larges zones pendant des périodes prolongées et bien après l'explosion.
+ 					 </p>
+ 				 <p>
+ 					 Un autre risque sérieux qui ne devrait pas être négligé est celui du détournement des munitions des stocks mal gérés et non sécurisés vers le commerce illicite. Les munitions détournées des réserves nationales peuvent trouver usage dans les guerres civiles, les insurrections, le terrorisme, le crime et autres violences armées, et ainsi attiser l'instabilité nationale et régionale et menacer la sécurité des États.
+ .
+ 				 </p>
 					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/EXPLO1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Dépollution de champs de bataille (DCB)</h3>
-							<p>La dépollution de champ de bataille est la recherche systématique, la détection et l’enlèvement de toutes munitions se trouvant dans une zone spécifique..</p>
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-								<img src="../img/EODGren1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Neutralisation d’engins explosifs (NEDEX)</h3>
-							<p>Neutralisation et destruction d’engins explosif tels que les restes d’explosifs de guerre, les bombes, les munitions abandonnées .</p>
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-						<img src="../img/C-IED.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Prévention et protection contre le terrorisme</h3>
-							<p>Outre les formations proposées dans le cadre de la lutte contre le terrorisme, nous sommes en mesure d’effectuer les missions suivantes ;
-							Recherche et fouille préventive lors d’événements de toutes natures,
-							Lutte contre les EEI.
-						</p>
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/FORMATION1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Chiens détecteur d’explosif + formations</h3>
+
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Services </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Expertise</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Audit</a>
+						</li>
+					</ul>
+
+					<!-- <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
+						necessitatibus voluptatem quis labore perspiciatis quia.</h3> -->
+
+					<div class="tab-content row justify-content-center">
+
+						<!-- Schdule Day 1 -->
+						<div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>09:30 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/MINE1.jpg" alt="Brenden Legros">
+									</div>
+									<h4>Déminage</h4>
+									<p>Le déminage de champ de mines incluant la formation et l’équipement des démineurs, l’éducation aux risques des mines, enquêtes technique et non technique, cartographie, assurance qualité, marquage du danger, documentation post-dépollution et la remise à disposition des terres..</p>
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>10:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/EXPLO1.jpg" alt="Brenden Legros">
+									</div>
+									<h4>Dépollution de champs de bataille (DCB)</h4>
+									<p>La dépollution de champ de bataille est la recherche systématique, la détection et l’enlèvement de toutes munitions se trouvant dans une zone spécifique..</p>
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>11:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/EODGren1.jpg" alt="Hubert Hirthe">
+									</div>
+									<h4>Neutralisation d’engins explosifs (NEDEX)</h4>
+									<p>Neutralisation et destruction d’engins explosif tels que les restes d’explosifs de guerre, les bombes, les munitions abandonnées .</p>
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>12:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/C-IED.jpg" alt="Cole Emmerich">
+									</div>
+									<h4>Prévention et protection contre le terrorisme</h4>
+									<p>Outre les formations proposées dans le cadre de la lutte contre le terrorisme, nous sommes en mesure d’effectuer les missions suivantes ;
+									Recherche et fouille préventive lors d’événements de toutes natures,
+									Lutte contre les EEI.
+								</p></div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>02:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/FORMATION1.jpg" alt="Jack Christiansen">
+									</div>
+									<h4>Chiens détecteur d’explosif + formations</h4>
+									<p></p>
+								</div>
+							</div>
+
+
 
 						</div>
+						<!-- End Schdule Day 1 -->
+
+						<!-- Schdule Day 2 -->
+						<div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>10:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<!-- <img src="img/speakers/1.jpg" alt="Brenden Legros"> -->
+									</div>
+									<h4>Nous travaillons en étroite collaboration avec nos clients afin de déterminer quel sont les besoins et les buts opérationnel exact de nos expertises. <a href="#"> Télécharger notre plaquette</a></h4>
+
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>11:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/MINE1.jpg" alt="Hubert Hirthe">
+									</div>
+									<h4>Zones minée</h4>
+									<!-- <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>12:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/EODGren1.jpg" alt="Cole Emmerich">
+									</div>
+									<h4>Reste d’explosif de guerre (REG).</h4>
+									<!-- <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>02:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/PSSM1.jpg" alt="Jack Christiansen">
+									</div>
+									<h4>Gestion du stockage des munitions </h4>
+									<!-- <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>03:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/WAM1.jpg" alt="Alejandrin Littel">
+									</div>
+									<h4>Gestion du stockage des armes</h4>
+									<!-- <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>04:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/EXPLO1.jpg" alt="Willow Trantow">
+									</div>
+									<h4>Engins Explosifs Improvisés (EEI)</h4>
+									<!-- <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p> -->
+								</div>
+							</div>
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>04:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/C-IED.jpg" alt="Willow Trantow">
+									</div>
+									<h4>Menance terroriste</h4>
+									<!-- <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p> -->
+								</div>
+							</div>
+
+						</div>
+						<!-- End Schdule Day 2 -->
+
+						<!-- Schdule Day 3 -->
+						<div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>10:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<!-- <img src="img/speakers/2.jpg" alt="Hubert Hirthe"> -->
+									</div>
+									<h4>Audit et évaluation des risques dans les zones polluées par les REG/Mine/EEI
+									Nous prenons en compte les besoins opérationnel de nos clients</h4>
+									<p>Nous sommes en mésure de proposer des expertises dans les domaines suivant:</p>
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>11:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/MINE1.jpg" alt="Cole Emmerich">
+									</div>
+									<h4>Audit</h4>
+									<!-- <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>12:00 AM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/EODGren1.jpg" alt="Brenden Legros">
+									</div>
+									<h4>Evaluation des risques</h4>
+									<!-- <p>Facere provident incidunt quos voluptas.</p> -->
+								</div>
+							</div>
+
+							<div class="row schedule-item">
+								<!-- <div class="col-md-2"><time>02:00 PM</time></div> -->
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src="img/PSSM1.jpg" alt="Jack Christiansen">
+									</div>
+									<h4>Controle qualité </h4>
+									<!-- <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p> -->
+								</div>
+							</div>
+
+
+
+
+
+						</div>
+						<!-- End Schdule Day 2 -->
+
 					</div>
 
 				</div>
-				<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-					<img src="{{ asset('img/mun1.jpg')}}" alt="muni">
-				{# 	<img src="{{ asset('img/mun1.jpg')}}" alt="muni"> #}
-				</figure>
 
-			</div>
-		</div>
-	</section>
+			</section>
+
+
+
+		</main>
+
 	<!--main-section-end-->
 
-<section class="main-section" id="service">
-		<!--main-section-start-->
-		<div class="container">
-			<h2 style="color:green">Expertise</h2>
-			<h6>Nous travaillons en étroite collaboration avec nos clients afin de déterminer quel sont les besoins et les buts opérationnel exact de nos expertises. <a href="#"> Télécharger notre plaquette</a></h6>
-			<div class="row">
-				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/MINE1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Zones minée</h3>
-							{# <p>Proin iaculis purus digni consequat sem digni ssim. Donec entum digni ssim.</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/EODGren1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Reste d’explosif de guerre (REG).</h3>
-							{# <p>Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/PSSM1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Gestion du stockage des munitions</h3>
-							{# <p>Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora entum.</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/WAM1.jpg" alt="armes">
-						</div>
-						<div class="service-list-col2">
-							<h3>Gestion du stockage des armes</h3>
-							{# <p>Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/EXPLO1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Engins Explosifs Improvisés (EEI)</h3>
-							{# <p>Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/C-IED.jpg" alt="terroriste">
-						</div>
-						<div class="service-list-col2">
-							<h3>Menace terroriste</h3>
-							{# <p>Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.</p> #}
-						</div>
-					</div>
-				</div>
-				<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
-					<img src="img/23.jpg" alt="">
-				</figure>
 
-			</div>
-		</div>
-	</section>
 	<!--main-section-end-->
-<section class="main-section" id="service">
-		<!--main-section-start-->
-		<div class="container">
-			{# <h2 style="color:green">Expertise</h2> #}
-			<p><h4>
-				Audit et évaluation des risques dans les zones polluées par les REG/Mine/EEI
-				Nous prenons en compte les besoins opérationnel de nos clients
-			</h4></p>
-			<h4>Nous sommes en mésure de proposer des expertises dans les domaines suivant: </h4>
-			<div class="row">
-				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/MINE1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Audit</h3>
-							{# <p>Proin iaculis purus digni consequat sem digni ssim. Donec entum digni ssim.</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/EODGren1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Evaluation des risques</h3>
-							{# <p>Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .</p> #}
-						</div>
-					</div>
-					<div class="service-list">
-						<div class="service-list-col1">
-							<img src="../img/PSSM1.jpg" alt="mine">
-						</div>
-						<div class="service-list-col2">
-							<h3>Contrôle qualité</h3>
-							{# <p>Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora entum.</p> #}
-						</div>
-					</div>
 
-				</div>
-
-
-			</div>
-		</div>
-	</section>
 	<!--main-section-end-->
-{# <section class="main-section client-part" id="client">
-        <!--main-section client-part-start-->
-        <div class="container">
-             <b class="quote-right wow fadeInDown delay-03"><i class="fa fa-quote-right"></i></b> #}
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="client-part-haead wow fadeInDown delay-05">Nous formons aussi </p>
-                </div>
-            </div>
-            {# <ul class="client wow fadeIn delay-05s">
-                <li><a href="#">
-                <img src="{{ asset('img/client-pic1.jpg')}}" alt="">
-                <h3>James Bond</h3>
-                <span>License To Drink Inc.</span>
-            </a></li>
-            </ul>
-        </div>
-    </section> #}
 
-
-	{#<section class="main-section alabaster">
-		<!--main-section alabaster-start-->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-sm-12 featured-work">
-					<h2 style="color:green">Formation</h2>
-					<P class="padding-b">Spécificités des formations Neutrex-Int
-Les spécificités des formations Neutrex-Int sont principalement axées sur la qualité des formations avec un haut niveau technique proposé ainsi que l’utilisation maximale d’exercice pratique se rapprochant le plus possible de la réalité. </P>
-<p>Des formations plus larges basées sur la compréhension des problèmes pouvant déboucher sur plusieurs solutions.
-</p>
-							<p>
-								Un pool d’experts en formation hautement qualifiés et expérimentés.
-							</p>
-							<p>
-								Tous nos formateur sont certifié formateur.
-Le respect strict de la normalisation en vigueur.
-							</p>
-
-
-			</div>
-		</div>
-	</section>
-	<!--main-section alabaster-end-->
-<section class="main-section alabaster">
-		<!--main-section alabaster-start-->
-		<div class="container">
-			<div class="row">
-				<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
-					<img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt="">
-				</figure>
-				<div class="col-lg-7 col-sm-8 featured-work">
-					<h2>Liste des cours</h2>
-					<P class="padding-b"></P>
-					<div class="featured-box">
-						<div class="featured-box-col1 wow fadeInRight delay-02s">
-							<i class="fa fa-magic"></i>
-						</div>
-						<div class="featured-box-col2 wow fadeInRight delay-02s">
-
-							<p>Sensibilisation : Mines – REG – EEI (menace terroriste)-C-IED. </p>
-						</div>
-					</div>
-					<div class="featured-box">
-						<div class="featured-box-col1 wow fadeInRight delay-04s">
-							<i class="fa fa-magic"></i>
-						</div>
-						<div class="featured-box-col2 wow fadeInRight delay-04s">
-
-							<p>Education aux risques : Mines – REG – EEI (menace terroriste)-C-IED . </p>
-						</div>
-					</div>
-					<div class="featured-box">
-						<div class="featured-box-col1 wow fadeInRight delay-06s">
-							<i class="fa fa-magic"></i>
-						</div>
-						<div class="featured-box-col2 wow fadeInRight delay-06s">
-
-							<p>NEDEX Niveau 1 : Déminage – Détecteurs – ID Mine – Généralités Mun. </p>
-							<p>NEDEX Niveau 2 : REG et BAC – Magnétométrie- ID Mun</p>
-							<p>NEDEX Niveau 3 : REG – ID Mun et Fct – Gestion activité NEDEX</p>
-							<p>NEDEX Niveau 3+	Recherche :Plongeur démineur (A venir) ,Uranium appauvris ,Chargement chimique ,IEDD</p>
-
-						</div>
-					</div>
-					<div class="featured-box">
-						<div class="featured-box-col1 wow fadeInRight delay-04s">
-							<i class="fa fa-magic"></i>
-						</div>
-						<div class="featured-box-col2 wow fadeInRight delay-04s">
-
-							<p>C-EEI	Fouille opérationnelle :	Sensibilisation à la menace EEI. </p>
-							<p>PSSM Niveau 1 (Magasinier)</p>
-							<p>PSSM Niveau 2 (Chef de dépôt)</p>
-							<p>PSSM Niveau 3 (Inspecteur)</p>
-							<p>WAM (Armurerie – SAA - ALPC- – DDR – Destruction des armes)	</p>
-							<p>Gestion de la qualité (A venir)</p>
-						</div>
-					</div>
-					<a class="Learn-More" href="#">Lire la suite</a>
-				</div>
-			</div>
-		</div>
-	</section> #}
 	<!--main-section alabaster-end -->
 
 

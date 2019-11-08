@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base0.html.twig' %}
 
 {% block title %}New Contact{% endblock %}
 
@@ -14,35 +14,65 @@
 			{{ message }} <a href=" {{ path('default') }} ">Rétourner à l'accueil </a>
 		</div>
     	{% endfor %}
-		<section class="main-section contact" id="contact">
+<main id="main">
+  <!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact" class="section-bg wow fadeInUp">
 
-			<div class="row">
-				<div class="col-lg-6 col-sm-7 wow fadeInLeft">
-					<div class="contact-info-box address clearfix">
-						<h3><i class=" icon-map-marker"></i>Address:</h3>
-						<span>Abidjan<br>Cote d'Ivoire.</span>
-					</div>
-					<div class="contact-info-box phone clearfix">
-						<h3><i class="fa fa-phone"></i>Tel:</h3>
-						<span>+225 79 70 71 30</span>
-					</div>
-					<div class="contact-info-box email clearfix">
-						<h3><i class="fa fa-pencil"></i>email:</h3>
-						<span>info@neutrex-int.com</span>
-					</div>
-					{# <div class="contact-info-box hours clearfix">
-						<h3><i class="fa fa-clock-o"></i>Hours:</h3>
-						<span><strong>Monday - Thursday:</strong> 10am - 6pm<br><strong>Friday:</strong> People work on Fridays now?<br><strong>Saturday - Sunday:</strong> Best not to ask.</span>
-					</div>
-					 #}
-				</div>
-				<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
-				
-					{{include('contact/_form.html.twig')}}
-		
-					
-				</div>
-			</div>
-		</section>
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Contactez Nous</h2>
+        <p>Tous nos contacts</p>
+      </div>
+
+      <div class="row contact-info">
+
+        <div class="col-md-4">
+          <div class="contact-address">
+            <i class="ion-ios-location-outline"></i>
+            <h3>Adresse</h3>
+            <address>Abidjan, COTE D'IVOIRE</address>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-phone">
+            <i class="ion-ios-telephone-outline"></i>
+            <h3>Numero de téléphone </h3>
+            <p><a href="tel:+22579707130">+225 79 70 71 30</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-email">
+            <i class="ion-ios-email-outline"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:iinfo@neutrex-int.com">info@neutrex-int.com</a></p>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </section><!-- #contact -->
+
+  <section  id="contact" class="section-bg wow fadeInUp">
+
+    <div class="row">
+
+      <div class="col-lg-12 col-sm-5 wow fadeInUp delay-05s">
+
+        {{include('contact/_form.html.twig')}}
+
+
+      </div>
+    </div>
+  </section>
+</main>
+
 	</div>
 {% endblock %}

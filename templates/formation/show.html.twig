@@ -1,22 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'base0.html.twig' %}
 
 {% block title %}Formation{% endblock %}
 
 {% block body %}
 
 <div class="container">
-        
+
         <section class="main-section contact" id="contact">
 
             <div class="row">
                 <div class="col-lg-6 col-sm-7 wow fadeInLeft">
                  <img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}" style="height:300px ; width:450px ;">
-                      
-                </div>  
 
-              
+                </div>
+
+
                 <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
-                
+
                     <table class="table table-striped">
                         <tbody>
                            {#  <tr>
@@ -40,8 +40,8 @@
                                 <td><a href="{{ path('inscrit_new', {'id': formation.id}) }}"> <button class="btn btn-warning" >S'incrire à la formation</button> </a></td>
                             </tr>
                         </tbody>
-                    </table>        
-                    
+                    </table>
+
                 </div>
             </div>
             <a href="{{ path('formation_index') }}">Retour à la liste </a>
@@ -56,5 +56,5 @@
         </section>
     </div>
 
-    
+
 {% endblock %}

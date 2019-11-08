@@ -12,7 +12,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('default/index.html.twig', [
+        return $this->render('default/index0.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }
@@ -31,4 +31,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/activite.html.twig');
     }
+    /**
+     * @Route("/accueil", name="accueil")
+     */
+    public function accueil ()
+    {
+      return $this->render('default/index0.html.twig');
+    }
+
 }
