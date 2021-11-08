@@ -80,6 +80,7 @@ class BiographieController extends AbstractController
           $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
           // moves the file to the directory where brochures are stored
           $file->move($this->getParameter('images_directory'), $fileName); // stock image dans /public/img
+          
           $biographie->setImage($fileName);
 
             $this->getDoctrine()->getManager()->flush();

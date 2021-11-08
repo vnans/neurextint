@@ -1,275 +1,232 @@
 {% extends 'base0.html.twig' %}
 
-{% block title %}Formation index{% endblock %}
+{% block title %}Formation index
+{% endblock %}
 
 {% block body %}
-   {#    #}
-   {% for message in app.flashes('infoInscrit') %}
-        <div class="alert alert-success text-center" role="alert">
-            {{ message }} <a href=" {{ path('default') }} ">Rétourner à l'accueil </a>
-        </div>
-        {% endfor %}
-        <section id="introFormation">
-          <div class="intro-container wow fadeIn">
-            <h1 class="mb-4 pb-0">Formation à la gestion des risques associés aux explosifs, munitions, mines et à la menace terroriste
-</h1>
+	{#    #}
+	{% for message in app.flashes('infoInscrit') %}
+		<div class="alert alert-success text-center" role="alert">
+			{{ message }}
+			<a href=" {{ path('default') }} ">Rétourner à l'accueil
+			</a>
+		</div>
+	{% endfor %}
+	<section id="introFormation">
+		<div class="intro-container wow fadeIn">
+			<h1 class="mb-4 pb-0">Formation à la gestion des risques associés aux explosifs, munitions, mines et à la menace terroriste
+			</h1>
 
-          </div>
-        </section>
-        <main id="main" >
-          <!--==========================
-            Speaker Details Section
-          ============================-->
-          <section id="speakers-details" class="wow fadeIn">
-            <div class="container">
-              <div class="section-header">
-                <h2>Formation</h2>
-                <p>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et regionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</p>
-                <p>Les formations Neutrex-Int technique proposées ainsi que l'utilisation maximale d'exercices pratiques se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formation hautement qualifiés et experimentés
-                </p>
-            </div>
+		</div>
+	</section>
+	<main
+		id="main">
+		<!--==========================
+																												            Speaker Details Section
+																												          ============================-->
+		<section id="speakers-details" class="wow fadeIn">
+			<div class="container">
+				<div class="section-header">
+					<h2>Formation</h2>
+					<p>Nos formations sont destinées à toutes personnes désirant travailler dans le déminage humanitaire ou provenant d'ONG, d'agence gouvernementales, nationales et régionales , entreprises privées et des Nations Unies et désirant parfaire leurs connaissances dans la gestion des risques liés aux explosifs.</p>
+					<p>Les formations Neutrex-int technique proposées ainsi que l'utilisation maximale d'exercices pratiques se rapprochant au maximun de la réalité. Des formations plus larges basées sur la comprehension des problèmes pouvant déboucher sur plusieurs solutions. Nous disposons d'un pool d'expert en formateur hautement qualifiés et experimentés
+					</p>
+				</div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="{{asset('img/classew.jpg')}} " alt="Speaker 1" class="img-fluid">
-                </div>
+				<div class="row">
+					<div class="col-md-6">
+						<img src="{{asset('img/classew.jpg')}} " alt="Speaker 1" class="img-fluid">
 
-                <div class="col-md-6">
-                  <div class="details">
-                    <h2>Prérequis</h2>
-                    <p>La connaissance parfaite de la langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
+					</div>
 
-                    <!-- <div class="social">
-                      <a href=""><i class="fa fa-twitter"></i></a>
-                      <a href=""><i class="fa fa-facebook"></i></a>
-                      <a href=""><i class="fa fa-google-plus"></i></a>
-                      <a href=""><i class="fa fa-linkedin"></i></a>
-                    </div> -->
-                    <h3>Qualifications</h3>
-                    <p>A l'issue de la réussite de chaque cycle de formation, un diplôme équivalent à la formation est délivré.</p>
+					<div class="col-md-6">
+						<div class="details">
+							<h2>Prérequis</h2>
+							<p>La connaissance parfaite de la langue française est obligatoire pour suivre les cycles de formations. Des prérequis spécifiques peuvent-etre demandés pour certaines formations</p>
 
-                    <h3>Assurance qualité</h3>
-                    <p>Toutes nos formations bénéficient d'un contrôle assurance qualité effectué par un organisme externe et reconnus.</p>
+							<!-- <div class="social">
+																																																																																																		                      <a href=""><i class="fa fa-twitter"></i></a>
+																																																																																																		                      <a href=""><i class="fa fa-facebook"></i></a>
+																																																																																																		                      <a href=""><i class="fa fa-google-plus"></i></a>
+																																																																																																		                      <a href=""><i class="fa fa-linkedin"></i></a>
+																																																																																																		                    </div> -->
+							<h2>Qualifications</h2>
+							<p>A l'issue de la réussite de chaque cycle de formation, un diplôme équivalent à la formation est délivré.</p>
 
-                    <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
-                  </div>
-                  <figure class="  text-right wow fadeInUp delay-02s">
-                 <img src="{{ asset('img/logoadem.png')}}" alt="">
-                 </figure>
-                </div>
+							<h2>Assurance qualité</h2>
+							<p>Toutes nos formations bénéficient d'un contrôle assurance qualité effectué par un organisme externe et reconnus.</p>
+							<img
+							src="{{asset('img/Formation.jpg') }}" alt="Speaker 1" class="img-fluid">
+						<!-- <img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt=""> -->
+						</div>
 
-              </div>
-            </div>
+					</div>
 
-          </section>
+				</div>
+			</div>
 
-
-          <section id="speackers-details" class="wow fadeIn">
-            <div class="contaner">
-              <div class="section-header">
-                <h2>Spécialisation</h2>
-                <P>Spécificités des formations Neutrex-Int sont principalement axées sur la qualité des formations avec un haut niveau technique proposé ainsi que l’utilisation maximale d’exercice pratique se rapprochant le plus possible de la réalité. </P>
-                <p>Des formations plus larges basées sur la compréhension des problèmes pouvant déboucher sur plusieurs solutions.
-                </p>
-                <p>	Un pool d’experts en formation hautement qualifiés et expérimentés. </p>
-                <p>Tous nos formateurs sont certifié formateur. Le respect strict de la normalisation en vigueur.</p>
-          </div>
-        </div>
-          </section>
-          <section id="speakers-details" class="wow fadeIn">
-            <div class="container">
-              <div class="section-header">
-                <h2>Liste des cours</h2>
-              <p></p>
-            </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="{{asset('img/Formation.jpg') }}" alt="Speaker 1" class="img-fluid">
-                  <!-- <img src="https://static.latribune.fr/710634/armee-malienne.jpg" alt=""> -->
-                </div>
-
-                <div class="col-md-6">
-                  <div class="details">
-                    <h2>Sensibilisation : <h3>Mines – REG – EEI (menace terroriste)-C-IED.</h3>  </h2>
-                    <h2>Education aux risques : <h3>Mines – REG – EEI (menace terroriste)-C-IED .</h3> </h2>
-                    <h2>NEDEX Niveau 1 : <h3> Déminage – Détecteurs – ID Mine – Généralités Mun. </h3> </h2>
-      							<h2>NEDEX Niveau 2 : <h3>REG et BAC – Magnétométrie- ID Mun</h3> </h2>
-      							<h2>NEDEX Niveau 3 : <h3>REG – ID Mun et Fct – Gestion activité NEDEX</h3> </h2>
-      							<h2>NEDEX Niveau 3+	Recherche :<h3>Plongeur démineur (A venir) ,Uranium appauvris ,Chargement chimique ,IEDD</h3> </h2>
-                    <h2>C-EEI	Fouille opérationnelle :	<h3>Sensibilisation à la menace EEI.</h3> </h2>
-                    <h2>PSSM Niveau 1 <h3>(Magasinier)</h3> </h2>
-                    <h2>PSSM Niveau 2 <h3>(Chef de dépôt)</h3> </h2>
-                    <h2>PSSM Niveau 3 <h3>(Inspecteur)</h3> </h2>
-                    <h2>WAM  <h3>(Armurerie – SAA - ALPC- – DDR – Destruction des armes)</h3>	</h2>
-                    <h2>Gestion de la qualité <h3>(A venir)</h3> </h2>
-
-                    </div>
-                </div>
-
-              </div>
-            </div>
-
-          </section>
-          <!--==========================
-            Schedule Section
-          ============================-->
-          <section id="schedule" class="section-with-bg">
-            <div class="container wow fadeInUp">
-              <div class="section-header">
-                <h2>Liste de nos formations</h2>
-                <!-- <p>Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</p> -->
-              </div>
-
-              <!-- <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
-                </li>
-              </ul> -->
-
-              <h3 class="sub-heading">Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h3>
-
-              <div class="tab-content row justify-content-center">
-
-                <!-- Schdule Day 1 -->
-                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-                {% for formation in formations  %}
-
-                  <div class="row schedule-item">
-                    <div class="col-md-2"><time>{{formation.duree}}</time></div>
-                    <div class="col-md-10">
-                      <div class="speaker">
-                          <img src=" {{ asset('img/FORMATION1.jpg')}} " alt="FORMATION1">
-                      </div>
-                      <h4>{{formation.theme}}</h4>
-                      <p>{{formation.soustheme}}.</p>
-                      <p><a href=" {{ path('formation_show',{'id':formation.id }) }} "> <button class="btn btn-warning">Plus d'informations </button> </a></p>
-                    </div>
-                  </div>
-                  {% endfor %}
+		</section>
 
 
+		<!--==========================
+																												            Schedule Section
+																												          ============================-->
+		<section id="schedule" class="section-with-bg">
+			<div class="container wow fadeInUp">
+				<div class="section-header">
+					<h2>Liste de nos formations</h2>
+					<!-- <p>Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</p> -->
+				</div>
+
+				<!-- <ul class="nav nav-tabs" role="tablist">
+																																																								                <li class="nav-item">
+																																																								                  <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+																																																								                </li>
+																																																								                <li class="nav-item">
+																																																								                  <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+																																																								                </li>
+																																																								                <li class="nav-item">
+																																																								                  <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+																																																								                </li>
+																																																								              </ul> -->
+
+				{# <h3 class="sub-heading">Nous sommes en Côte d’Ivoire: à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.</h3> #}
+
+				<div
+					class="tab-content row justify-content-center">
+
+					<!-- Schdule Day 1 -->
+					<div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+						{% for formation in formations  %}
+
+							<div class="row schedule-item">
+								<div
+									class="col-md-2">{# <time>{{formation.duree}}</time> #}
+								</div>
+								<div class="col-md-10">
+									<div class="speaker">
+										<img src=" {{ asset('img/formation.png')}} " alt="FORMATION1">
+									</div>
+									<h4>{{formation.theme}}</h4>
+									<p>{{formation.soustheme|raw}}.</p>
+									<p>
+										<a href=" {{ path('formation_show',{'id':formation.id }) }} ">
+											<button class="btn btn-warning">Plus d'informations
+											</button>
+										</a>
+									</p>
+								</div>
+							</div>
+						{% endfor %}
 
 
+					</div>
+					<!-- End Schdule Day 1 -->
 
-                </div>
-                <!-- End Schdule Day 1 -->
+					<!-- Schdule Day 2 -->
+					<div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2"></div>
+					<!-- End Schdule Day 2 -->
 
-                <!-- Schdule Day 2 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+					<!-- Schdule Day 3 -->
+					<div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3"></div>
+					<!-- End Schdule Day 2 -->
 
+				</div>
 
-                </div>
-                <!-- End Schdule Day 2 -->
+			</div>
 
-                <!-- Schdule Day 3 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-
-
-                </div>
-                <!-- End Schdule Day 2 -->
-
-              </div>
-
-            </div>
-
-          </section>
-        </main>
+		</section>
+	</main>
 
 
-  	<!--main-section alabaster-end-->
+	<!--main-section alabaster-end-->
 
 
-
-    <!-- <section class="business-talking">
-
-        <div class="container">
-            <h2>NosPartenaire</h2>
-        </div>
-    </section> -->
-
+	<!-- <section class="business-talking">
+														
+														        <div class="container">
+														            <h2>NosPartenaire</h2>
+														        </div>
+														    </section> -->
 
 
+	{#  <table class="table">
+														        <thead>
+														            <tr>
+														                <th>Id</th>
+														                <th>Theme</th>
+														                <th>Soustheme</th>
+														                <th>Duree</th>
+														                <th>actions</th>
+														            </tr>
+														        </thead>
+														        <tbody>
+														        {% for formation in formations %}
+														            <tr>
+														                <td>{{ formation.id }}</td>
+														                <td>{{ formation.theme }}</td>
+														                <td>{{ formation.soustheme }}</td>
+														                <td>{{ formation.duree }}</td>
+														                <td>
+														                    <a href="{{ path('formation_show', {'id': formation.id}) }}">show</a>
+														                    <a href="{{ path('formation_edit', {'id': formation.id}) }}">edit</a>
+														                </td>
+														            </tr>
+														        {% else %}
+														            <tr>
+														                <td colspan="5">no records found</td>
+														            </tr>
+														        {% endfor %}
+														        </tbody>
+														    </table>
+														
+														    <a href="{{ path('formation_new') }}">Create new</a> #}
 
-   {#  <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Theme</th>
-                <th>Soustheme</th>
-                <th>Duree</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for formation in formations %}
-            <tr>
-                <td>{{ formation.id }}</td>
-                <td>{{ formation.theme }}</td>
-                <td>{{ formation.soustheme }}</td>
-                <td>{{ formation.duree }}</td>
-                <td>
-                    <a href="{{ path('formation_show', {'id': formation.id}) }}">show</a>
-                    <a href="{{ path('formation_edit', {'id': formation.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+		<main
+		id="main"> <!--==========================
+																																										    Venue Section
+																																										  ============================-->
+		<section id="venue" class="wow fadeInUp">
 
-    <a href="{{ path('formation_new') }}">Create new</a> #}
+			<div class="container-fluid">
 
-<main id="main">
-  <!--==========================
-    Venue Section
-  ============================-->
-  <section id="venue" class="wow fadeInUp">
+				<div class="section-header">
+					<h2>Site de formation</h2>
+					<!-- <p>Event venue location info and gallery</p> -->
+				</div>
 
-    <div class="container-fluid">
+				<div class="row no-gutters">
+					<div
+						class="col-lg-6 venue-map">
+						<!-- <img src="{{asset('img/carte1.jpg')}} " alt=""> -->
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179770.91817239107!2d-4.116579238126628!3d5.3536818452483335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan!5e0!3m2!1sfr!2sci!4v1569943657994!5m2!1sfr!2sci" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 
-      <div class="section-header">
-        <h2>Site de formation</h2>
-        <!-- <p>Event venue location info and gallery</p> -->
-      </div>
-
-      <div class="row no-gutters">
-        <div class="col-lg-6 venue-map">
-<!-- <img src="{{asset('img/carte1.jpg')}} " alt=""> -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179770.91817239107!2d-4.116579238126628!3d5.3536818452483335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ea5311959121%3A0x3fe70ddce19221a6!2sAbidjan!5e0!3m2!1sfr!2sci!4v1569943657994!5m2!1sfr!2sci" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
-        </div>
-
-
-        <div class="col-lg-6 venue-info">
-          <div class="row justify-content-center">
-            <div class="col-11 col-lg-8">
-              <h3>Abidjan, Cote d'Ivoire</h3>
-              <p>En Côte d’Ivoire, à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.. </p>
-              <p>Nous disposons d’infrastructures et d’équipements complets innovants et uniques. Nous bénéficions d’une coopération bénéfique avec les autorités de sécurité nationale.. </p>
-              <p>Nous sommes en mésure de proposer des simulations et scénarios à grande échelle incluant l’emploi d’explosif pour des démolitions de masse. </p>
-
-          </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
+					</div>
 
 
-    	<!--main-section alabaster-end-->
+					<div class="col-lg-6 venue-info">
+						<div class="row justify-content-center">
+							<div class="col-11 col-lg-8">
+								<h3>Abidjan, Côte d'Ivoire</h3>
+								<p>En Côte d’Ivoire, à Abidjan et ailleurs dans le pays pour certains exercices pratiques suivant le type de formation.
+								</p>
+								<p>Nous disposons d’infrastructures et d’équipements complets innovants et uniques. Nous bénéficions d’une coopération bénéfique avec les autorités de sécurité nationale.
+								</p>
+								<p>Nous sommes en mésure de proposer des simulations et scénarios à grande échelle incluant l’emploi d’explosif pour des démolitions de masse.
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<!--main-section alabaster-end-->
 {% endblock %}

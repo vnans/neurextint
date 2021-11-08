@@ -32,7 +32,7 @@ class Formation
      */
     private $duree;
 
-     /**
+    /**
      * @var string
      * @Gedmo\Slug(fields={"theme","soustheme","duree"})
      * @ORM\Column(type="string", length=255, nullable=false)
@@ -48,6 +48,11 @@ class Formation
      * @ORM\Column(type="string", length=10000, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $plaquette;
 
 
 
@@ -124,6 +129,18 @@ class Formation
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPlaquette()
+    {
+        return $this->plaquette;
+    }
+
+    public function setPlaquette($plaquette): self
+    {
+        $this->plaquette = $plaquette;
 
         return $this;
     }

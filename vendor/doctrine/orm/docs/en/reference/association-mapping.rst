@@ -18,9 +18,9 @@ This chapter is split into three different sections.
 
 One tip for working with relations is to read the relation from left to right, where the left word refers to the current Entity. For example:
 
-- OneToMany - One instance of the current Entity has Many instances (references) to the refered Entity.
-- ManyToOne - Many instances of the current Entity refer to One instance of the refered Entity.
-- OneToOne - One instance of the current Entity refers to One instance of the refered Entity.
+- OneToMany - One instance of the current Entity has Many instances (references) to the referred Entity.
+- ManyToOne - Many instances of the current Entity refer to One instance of the referred Entity.
+- OneToOne - One instance of the current Entity refers to One instance of the referred Entity.
 
 See below for all the possible relations. 
 
@@ -286,7 +286,7 @@ below.
         // ...
 
         /**
-         * One Student has One Student.
+         * One Student has One Mentor.
          * @OneToOne(targetEntity="Student")
          * @JoinColumn(name="mentor_id", referencedColumnName="id")
          */
@@ -313,8 +313,8 @@ One-To-Many, Bidirectional
 --------------------------
 
 A one-to-many association has to be bidirectional, unless you are using a
-join table. This is because the many side in a one-to-many association holds
-the foreign key, making it the owning side. Doctrine needs the many side
+join table. This is because the "many" side in a one-to-many association holds
+the foreign key, making it the owning side. Doctrine needs the "many" side
 defined in order to understand the association.
 
 This bidirectional mapping requires the ``mappedBy`` attribute on the
@@ -335,7 +335,7 @@ bidirectional many-to-one.
         {
             // ...
             /**
-             * One Product has Many Features.
+             * One product has many features. This is the inverse side.
              * @OneToMany(targetEntity="Feature", mappedBy="product")
              */
             private $features;
@@ -351,7 +351,7 @@ bidirectional many-to-one.
         {
             // ...
             /**
-             * Many Features have One Product.
+             * Many features have one product. This is the owning side.
              * @ManyToOne(targetEntity="Product", inversedBy="features")
              * @JoinColumn(name="product_id", referencedColumnName="id")
              */

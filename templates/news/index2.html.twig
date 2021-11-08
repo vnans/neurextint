@@ -1,0 +1,47 @@
+{% extends 'base0.html.twig' %}
+
+{% block title %}les News
+{% endblock %}
+
+{% block body %}
+
+	<main class="main">
+
+		<div class="container-fluid">
+			<section id="speakers" class="wow fadeInUp">
+				<div class="container">
+					<div class="section-header">
+						<h2>News</h2>
+						<p>Suivez ici notre actualité</p>
+					</div>
+
+					<div class="row">
+						{% for news in new %}
+							<div class="col-lg-4 col-md-6">
+								<div class="speaker">
+									<img src="{{ asset('img/formation/')}}{{news.img}}" alt=" speaker 1" class=" img-fluid">
+									<div class="details">
+										<h3>
+											<a href="{{ path('news_show', {'id': news.id}) }}">
+												{{ news.title }}
+											</a>
+										</h3>
+										<p>
+											<a href="{{ path('news_show', {'id': news.id}) }}" class="btn btn-success">Plus de détails</a>
+										</p>
+
+
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+
+
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</main>
+
+{% endblock %}

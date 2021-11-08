@@ -17,9 +17,10 @@ class FormationType extends AbstractType
             ->add('theme')
             ->add('soustheme')
             ->add('duree')
-            ->add('image', FileType::class, array('label' => 'Choisir une image','data_class'=>null))
-            ->add('description' , TextareaType::class)
-        ;
+            ->add('image', FileType::class, array('label' => 'Choisir une image', 'data_class' => null))
+            ->add('plaquette', FileType::class, array('label' => 'Choisir un fichier', 'data_class' => null))
+
+            ->add('description', TextareaType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

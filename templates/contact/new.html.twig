@@ -1,78 +1,86 @@
 {% extends 'base0.html.twig' %}
 
-{% block title %}New Contact{% endblock %}
+{% block title %}New Contact
+{% endblock %}
 
 {% block body %}
-  {#   <h1>Create new Contact</h1>
- #}
-   {#  {{ include('contact/_form.html.twig') }} #}
+	{#   <h1>Create new Contact</h1>
+	 #}
+	{#  {{ include('contact/_form.html.twig') }} #}
 
-  {#   <a href="{{ path('contact_index') }}">back to list</a> #}
-    <div class="container">
-    	{% for message in app.flashes('info') %}
-		<div class="alert alert-success text-center" role="alert">
-			{{ message }} <a href=" {{ path('default') }} ">Rétourner à l'accueil </a>
-		</div>
-    	{% endfor %}
-<main id="main">
-  <!--==========================
-    Contact Section
-  ============================-->
-  <section id="contact" class="section-bg wow fadeInUp">
+	{#   <a href="{{ path('contact_index') }}">back to list</a> #}
+		<div class="container"> {% for message in app.flashes('info') %}
+			<div class="alert alert-success text-center" role="alert">
+				{{ message }}
+				<a href=" {{ path('default') }} ">Rétourner à l'accueil
+				</a>
+			</div>
+		{% endfor %}
+		<main
+			id="main">
+			<!--==========================
+			    Contact Section
+			  ============================-->
+			<section id="contact" class="section-bg wow fadeInUp">
 
-    <div class="container">
+				<div class="container">
 
-      <div class="section-header">
-        <h2>Contactez Nous</h2>
-        <p>Tous nos contacts</p>
-      </div>
+					<div class="section-header">
+						<h2>Contactez Nous</h2>
+						<p>Tous nos contacts</p>
+					</div>
 
-      <div class="row contact-info">
+					<div class="row contact-info">
 
-        <div class="col-md-4">
-          <div class="contact-address">
-            <i class="ion-ios-location-outline"></i>
-            <h3>Adresse</h3>
-            <address>Abidjan, COTE D'IVOIRE</address>
-          </div>
-        </div>
+						<div class="col-md-4">
+							<div class="contact-address">
+								<i class="ion-ios-location-outline"></i>
+								<h3>Adresse</h3>
+								<address>Abidjan, Côte d'Ivoire</address>
+							</div>
+						</div>
 
-        <div class="col-md-4">
-          <div class="contact-phone">
-            <i class="ion-ios-telephone-outline"></i>
-            <h3>Numero de téléphone </h3>
-            <p><a href="tel:+22579707130">+225 79 70 71 30</a></p>
-          </div>
-        </div>
+						<div class="col-md-4">
+							<div class="contact-phone">
+								<i class="ion-ios-telephone-outline"></i>
+								<h3>Numero de téléphone
+								</h3>
+								<p>
+									<a href="tel:+22579707130">+225 07 79 70 71 30</a>
+								</p>
+							</div>
+						</div>
 
-        <div class="col-md-4">
-          <div class="contact-email">
-            <i class="ion-ios-email-outline"></i>
-            <h3>Email</h3>
-            <p><a href="mailto:iinfo@neutrex-int.com">info@neutrex-int.com</a></p>
-          </div>
-        </div>
+						<div class="col-md-4">
+							<div class="contact-email">
+								<i class="ion-ios-email-outline"></i>
+								<h3>Email</h3>
+								<p>
+									<a href="mailto:iinfo@neutrex-int.com">info@neutrex-int.com</a>
+								</p>
+							</div>
+						</div>
 
-      </div>
-
-
-
-    </div>
-  </section><!-- #contact -->
-
-  <section  id="contact" class="section-bg wow fadeInUp">
-
-    <div class="row">
-
-      <div class="col-lg-12 col-sm-5 wow fadeInUp delay-05s">
-
-        {{include('contact/_form.html.twig')}}
+					</div>
 
 
-      </div>
-    </div>
-  </section>
-</main>
+				</div>
+			</section>
+			<!-- #contact -->
+
+			<section id="contact" class="section-bg wow fadeInUp">
+
+				<div class="row">
+
+					<div class="col-lg-12 col-sm-5 wow fadeInUp delay-05s">
+
+						{{include('contact/_form.html.twig')}}
+
+
+					</div>
+				</div>
+			</section>
+		</main>
 
 	</div>
 {% endblock %}

@@ -1,60 +1,77 @@
 {% extends 'base0.html.twig' %}
 
-{% block title %}Formation{% endblock %}
+{% block title %}Formation
+{% endblock %}
 
 {% block body %}
 
-<div class="container">
+	<div class="container">
 
-        <section class="main-section contact" id="contact">
+		<section class="main-section contact" id="contact">
 
-            <div class="row">
-                <div class="col-lg-6 col-sm-7 wow fadeInLeft">
-                 <img src="{{ asset('/img/formation/') }}{{ formation.image }} " alt="{{ asset('public/img/formation/') }}{{ formation.image }}" style="height:300px ; width:450px ;">
+			<div class="row">
+				<div class="col-lg-6 col-sm-7 wow fadeInLeft">
+					<img src="{{ asset('/img/formation/') }}{{ formation.image }}" alt="{{ asset('/img/formation/') }}{{ formation.image }}" style="height:300px ; width:450px ;">
 
-                </div>
+				</div>
 
 
-                <div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
+				<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
 
-                    <table class="table table-striped">
-                        <tbody>
-                           {#  <tr>
-                                <th>Id</th>
-                                <td>{{ formation.id }}</td>
-                            </tr> #}
-                            <tr>
-                                <th>Theme</th>
-                                <td>{{ formation.theme }}</td>
-                            </tr>
-                            <tr>
-                                <th>Soustheme</th>
-                                <td>{{ formation.soustheme }}</td>
-                            </tr>
-                            <tr>
-                                <th>Duree</th>
-                                <td>{{ formation.duree }}</td>
-                            </tr>
-                            <tr>
-                                <th>Action</th>
-                                <td><a href="{{ path('inscrit_new', {'id': formation.id}) }}"> <button class="btn btn-warning" >S'incrire à la formation</button> </a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+					<table class="table table-striped">
+						<tbody>
+							{#  <tr>
+																																																																																																																                                <th>Id</th>
+																																																																																																																                                <td>{{ formation.id }}</td>
+																																																																																																																                            </tr> #}
+							<tr>
+								<th>Theme</th>
+								<td>{{ formation.theme }}</td>
+							</tr>
+							<tr>
+								<th>Soustheme</th>
+								<td>{{ formation.soustheme|raw }}</td>
+							</tr>
+							<tr>
+								<th>Duree</th>
+								<td>{{ formation.duree }}</td>
+							</tr>
+							{% if formation.plaquette is not null %}
+								<tr>
+									<th>Téléchargez la plaquette</th>
+									<td>
+										<a href="https://neutrex-int/img/formation/{{formation.plaquette}}">Télécharger la plaquette</a>
 
-                </div>
-            </div>
-            <a href="{{ path('formation_index') }}">Retour à la liste </a>
+									</td>
+								</tr>
+							{% endif %}
 
-           {#  <a href="{{ path('formation_edit', {'id': formation.id}) }}"> Modifier</a>
 
-            {{ include('formation/_delete_form.html.twig') }} #}
-        </section>
-        <section class="main-section alabaster">
-            <h2>Description de la formation</h2>
-            <p>{{ formation.description }}</p>
-        </section>
-    </div>
+							<tr>
+								<th>Action</th>
+								<td>
+									<a href="{{ path('inscrit_new', {'id': formation.id}) }}">
+										<button class="btn btn-warning">S'incrire à la formation</button>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+			<a href="{{ path('formation_index') }}">Retour à la liste
+			</a>
+
+			{#  <a href="{{ path('formation_edit', {'id': formation.id}) }}"> Modifier</a>
+																																																
+																																																            {{ include('formation/_delete_form.html.twig') }} #}
+		</section>
+		<section class="main-section alabaster">
+			<h2>Description de la formation</h2>
+			<p>{{ formation.description|raw }}</p>
+		</section>
+	</div>
 
 
 {% endblock %}

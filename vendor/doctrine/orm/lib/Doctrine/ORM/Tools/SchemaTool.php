@@ -19,7 +19,7 @@
 
 namespace Doctrine\ORM\Tools;
 
-use Doctrine\ORM\ORMException;
+use Doctrine\DBAL\Schema\AbstractAsset;
 use Doctrine\DBAL\Schema\Comparator;
 use Doctrine\DBAL\Schema\Index;
 use Doctrine\DBAL\Schema\Schema;
@@ -28,6 +28,7 @@ use Doctrine\DBAL\Schema\Visitor\DropSchemaSqlCollector;
 use Doctrine\DBAL\Schema\Visitor\RemoveNamespacedAssets;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Tools\Event\GenerateSchemaTableEventArgs;
 use Doctrine\ORM\Tools\Event\GenerateSchemaEventArgs;
 
@@ -45,6 +46,8 @@ use Doctrine\ORM\Tools\Event\GenerateSchemaEventArgs;
  */
 class SchemaTool
 {
+    private const KNOWN_COLUMN_OPTIONS = ['comment', 'unsigned', 'fixed', 'default'];
+
     /**
      * @var \Doctrine\ORM\EntityManagerInterface
      */
@@ -104,7 +107,7 @@ class SchemaTool
      *
      * @param array $classes
      *
-     * @return array The SQL statements needed to create the schema for the classes.
+     * @return string[] The SQL statements needed to create the schema for the classes.
      */
     public function getCreateSchemaSql(array $classes)
     {
@@ -467,19 +470,8 @@ class SchemaTool
             $options['columnDefinition'] = $mapping['columnDefinition'];
         }
 
-        if (isset($mapping['options'])) {
-            $knownOptions = ['comment', 'unsigned', 'fixed', 'default'];
-
-            foreach ($knownOptions as $knownOption) {
-                if (array_key_exists($knownOption, $mapping['options'])) {
-                    $options[$knownOption] = $mapping['options'][$knownOption];
-
-                    unset($mapping['options'][$knownOption]);
-                }
-            }
-
-            $options['customSchemaOptions'] = $mapping['options'];
-        }
+        // the 'default' option can be overwritten here
+        $options = $this->gatherColumnOptions($mapping) + $options;
 
         if ($class->isIdGeneratorIdentity() && $class->getIdentifierFieldNames() == [$mapping['fieldName']]) {
             $options['autoincrement'] = true;
@@ -647,7 +639,7 @@ class SchemaTool
 
         foreach ($joinColumns as $joinColumn) {
 
-            list($definingClass, $referencedFieldName) = $this->getDefiningClass(
+            [$definingClass, $referencedFieldName] = $this->getDefiningClass(
                 $class,
                 $joinColumn['referencedColumnName']
             );
@@ -690,9 +682,7 @@ class SchemaTool
                     $columnOptions['notnull'] = ! $joinColumn['nullable'];
                 }
 
-                if (isset($fieldMapping['options'])) {
-                    $columnOptions['options'] = $fieldMapping['options'];
-                }
+                $columnOptions = $columnOptions + $this->gatherColumnOptions($fieldMapping);
 
                 if ($fieldMapping['type'] == "string" && isset($fieldMapping['length'])) {
                     $columnOptions['length'] = $fieldMapping['length'];
@@ -746,6 +736,23 @@ class SchemaTool
     }
 
     /**
+     * @param mixed[] $mapping
+     *
+     * @return mixed[]
+     */
+    private function gatherColumnOptions(array $mapping) : array
+    {
+        if (! isset($mapping['options'])) {
+            return [];
+        }
+
+        $options = array_intersect_key($mapping['options'], array_flip(self::KNOWN_COLUMN_OPTIONS));
+        $options['customSchemaOptions'] = array_diff_key($mapping['options'], $options);
+
+        return $options;
+    }
+
+    /**
      * Drops the database schema for the given classes.
      *
      * In any way when an exception is thrown it is suppressed since drop was
@@ -787,7 +794,7 @@ class SchemaTool
     /**
      * Gets the SQL needed to drop the database schema for the connections database.
      *
-     * @return array
+     * @return string[]
      */
     public function getDropDatabaseSQL()
     {
@@ -805,7 +812,7 @@ class SchemaTool
      *
      * @param array $classes
      *
-     * @return array
+     * @return string[]
      */
     public function getDropSchemaSQL(array $classes)
     {
@@ -818,7 +825,6 @@ class SchemaTool
         foreach ($fullSchema->getTables() as $table) {
             if ( ! $schema->hasTable($table->getName())) {
                 foreach ($table->getForeignKeys() as $foreignKey) {
-                    /* @var $foreignKey \Doctrine\DBAL\Schema\ForeignKeyConstraint */
                     if ($schema->hasTable($foreignKey->getForeignTableName())) {
                         $visitor->acceptForeignKey($table, $foreignKey);
                     }
@@ -881,14 +887,12 @@ class SchemaTool
      * @param boolean $saveMode If TRUE, only generates SQL for a partial update
      *                          that does not include SQL for dropping assets which are scheduled for deletion.
      *
-     * @return array The sequence of SQL statements.
+     * @return string[] The sequence of SQL statements.
      */
     public function getUpdateSchemaSql(array $classes, $saveMode = false)
     {
-        $sm = $this->em->getConnection()->getSchemaManager();
-
-        $fromSchema = $sm->createSchema();
         $toSchema = $this->getSchemaFromMetadata($classes);
+        $fromSchema = $this->createSchemaForComparison($toSchema);
 
         $comparator = new Comparator();
         $schemaDiff = $comparator->compare($fromSchema, $toSchema);
@@ -898,5 +902,36 @@ class SchemaTool
         }
 
         return $schemaDiff->toSql($this->platform);
+    }
+
+    /**
+     * Creates the schema from the database, ensuring tables from the target schema are whitelisted for comparison.
+     */
+    private function createSchemaForComparison(Schema $toSchema) : Schema
+    {
+        $connection    = $this->em->getConnection();
+        $schemaManager = $connection->getSchemaManager();
+
+        // backup schema assets filter
+        $config         = $connection->getConfiguration();
+        $previousFilter = $config->getSchemaAssetsFilter();
+
+        if ($previousFilter === null) {
+            return $schemaManager->createSchema();
+        }
+
+        // whitelist assets we already know about in $toSchema, use the existing filter otherwise
+        $config->setSchemaAssetsFilter(static function ($asset) use ($previousFilter, $toSchema) : bool {
+            $assetName = $asset instanceof AbstractAsset ? $asset->getName() : $asset;
+
+            return $toSchema->hasTable($assetName) || $toSchema->hasSequence($assetName) || $previousFilter($asset);
+        });
+
+        try {
+            return $schemaManager->createSchema();
+        } finally {
+            // restore schema assets filter
+            $config->setSchemaAssetsFilter($previousFilter);
+        }
     }
 }

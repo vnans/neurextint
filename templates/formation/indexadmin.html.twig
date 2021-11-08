@@ -1,67 +1,68 @@
 {% extends 'adminbase.html.twig' %}
 
-{% block title %}Formation admin   {% endblock %}
+{% block title %}Formation admin
+{% endblock %}
 
 {% block body %}
-  
-  
-    <div class="container-fluid">
-        <!-- DataTables Example -->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Liste des formations</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                     <tr>
-                        <th>Id</th>
-                        <th>Theme</th>
-                        <th>Soustheme</th>
-                        <th>Duree</th>
-                        <th>actions</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                        <th>Id</th>
-                        <th>Theme</th>
-                        <th>Soustheme</th>
-                        <th>Duree</th>
-                        <th>actions</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                   
-                    
-                    {% for formation in formations %}
-                    <tr>
-                        <td>{{ formation.id }}</td>
-                        <td>{{ formation.theme }}</td>
-                        <td>{{ formation.soustheme }}</td>
-                        <td>{{ formation.duree }}</td>
-                        <td>
-                            <a href="{{ path('formation_show', {'id': formation.id}) }}">Afficher</a>
-                            <a href="{{ path('formation_edit', {'id': formation.id}) }}">Modifier</a>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr>
-                <td colspan="5">Aucune formations</td>
-            </tr>
-        {% endfor %}
-                  
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Mise a  jour le :</div>
-          </div>
 
-    </div>
 
- 
+	<div
+		class="container-fluid">
+		<!-- DataTables Example -->
+		<div class="card mb-3">
+			<div class="card-header">
+				<i class="fas fa-table"></i>
+				Liste des formations</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Theme</th>
+								<th>Soustheme</th>
+								<th>Duree</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>Theme</th>
+								<th>Soustheme</th>
+								<th>Duree</th>
+								<th>actions</th>
+							</tr>
+						</tfoot>
+						<tbody>
 
-  {#   <a href="{{ path('formation_new') }}">Create new</a>  #}
+
+							{% for formation in formations %}
+								<tr>
+									<td>{{ formation.id }}</td>
+									<td>{{ formation.theme }}</td>
+									<td>{{ formation.soustheme }}</td>
+									<td>{{ formation.duree }}</td>
+									<td>
+										<a href="{{ path('formation_show', {'id': formation.id}) }}">Afficher</a>
+										<a href="{{ path('formation_edit', {'id': formation.id}) }}">Modifier</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="5">Aucune formations</td>
+								</tr>
+							{% endfor %}
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer small text-muted">Mise a  jour le :</div>
+		</div>
+
+	</div>
+
+
+	{#   <a href="{{ path('formation_new') }}">Create new</a>  #}
 {% endblock %}

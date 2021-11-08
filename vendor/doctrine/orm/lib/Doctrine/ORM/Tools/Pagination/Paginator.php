@@ -19,11 +19,13 @@
 
 namespace Doctrine\ORM\Tools\Pagination;
 
-use Doctrine\ORM\Query\Parser;
-use Doctrine\ORM\QueryBuilder;
-use Doctrine\ORM\Query;
-use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\Query\Parser;
+use Doctrine\ORM\Query\ResultSetMapping;
+use Doctrine\ORM\QueryBuilder;
+use function array_map;
+use function array_sum;
 
 /**
  * The paginator can handle various complex scenarios with DQL.
@@ -121,7 +123,7 @@ class Paginator implements \Countable, \IteratorAggregate
     {
         if ($this->count === null) {
             try {
-                $this->count = array_sum(array_map('current', $this->getCountQuery()->getScalarResult()));
+                $this->count = (int) array_sum(array_map('current', $this->getCountQuery()->getScalarResult()));
             } catch (NoResultException $e) {
                 $this->count = 0;
             }
@@ -138,30 +140,34 @@ class Paginator implements \Countable, \IteratorAggregate
         $offset = $this->query->getFirstResult();
         $length = $this->query->getMaxResults();
 
-        if ($this->fetchJoinCollection) {
+        if ($this->fetchJoinCollection && $length !== null) {
             $subQuery = $this->cloneQuery($this->query);
 
             if ($this->useOutputWalker($subQuery)) {
                 $subQuery->setHint(Query::HINT_CUSTOM_OUTPUT_WALKER, LimitSubqueryOutputWalker::class);
             } else {
                 $this->appendTreeWalker($subQuery, LimitSubqueryWalker::class);
+                $this->unbindUnusedQueryParams($subQuery);
             }
 
             $subQuery->setFirstResult($offset)->setMaxResults($length);
 
-            $ids = array_map('current', $subQuery->getScalarResult());
+            $foundIdRows = $subQuery->getScalarResult();
 
-            $whereInQuery = $this->cloneQuery($this->query);
             // don't do this for an empty id array
-            if (count($ids) === 0) {
+            if ($foundIdRows === []) {
                 return new \ArrayIterator([]);
             }
+
+            $whereInQuery = $this->cloneQuery($this->query);
+            $ids          = array_map('current', $foundIdRows);
 
             $this->appendTreeWalker($whereInQuery, WhereInWalker::class);
             $whereInQuery->setHint(WhereInWalker::HINT_PAGINATOR_ID_COUNT, count($ids));
             $whereInQuery->setFirstResult(null)->setMaxResults(null);
             $whereInQuery->setParameter(WhereInWalker::PAGINATOR_ID_ALIAS, $ids);
             $whereInQuery->setCacheable($this->query->isCacheable());
+            $whereInQuery->expireQueryCache();
 
             $result = $whereInQuery->getResult($this->query->getHydrationMode());
         } else {
@@ -185,7 +191,6 @@ class Paginator implements \Countable, \IteratorAggregate
      */
     private function cloneQuery(Query $query)
     {
-        /* @var $cloneQuery Query */
         $cloneQuery = clone $query;
 
         $cloneQuery->setParameters(clone $query->getParameters());
@@ -239,7 +244,6 @@ class Paginator implements \Countable, \IteratorAggregate
      */
     private function getCountQuery()
     {
-        /* @var $countQuery Query */
         $countQuery = $this->cloneQuery($this->query);
 
         if ( ! $countQuery->hasHint(CountWalker::HINT_DISTINCT)) {
@@ -256,14 +260,20 @@ class Paginator implements \Countable, \IteratorAggregate
             $countQuery->setResultSetMapping($rsm);
         } else {
             $this->appendTreeWalker($countQuery, CountWalker::class);
+            $this->unbindUnusedQueryParams($countQuery);
         }
 
         $countQuery->setFirstResult(null)->setMaxResults(null);
 
-        $parser            = new Parser($countQuery);
+        return $countQuery;
+    }
+
+    private function unbindUnusedQueryParams(Query $query): void
+    {
+        $parser            = new Parser($query);
         $parameterMappings = $parser->parse()->getParameterMappings();
         /* @var $parameters \Doctrine\Common\Collections\Collection|\Doctrine\ORM\Query\Parameter[] */
-        $parameters        = $countQuery->getParameters();
+        $parameters        = $query->getParameters();
 
         foreach ($parameters as $key => $parameter) {
             $parameterName = $parameter->getName();
@@ -273,8 +283,6 @@ class Paginator implements \Countable, \IteratorAggregate
             }
         }
 
-        $countQuery->setParameters($parameters);
-
-        return $countQuery;
+        $query->setParameters($parameters);
     }
 }

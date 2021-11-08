@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\NewsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -10,10 +11,10 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index()
+    public function index(NewsRepository $newsRepository)
     {
         return $this->render('default/index0.html.twig', [
-            'controller_name' => 'DefaultController',
+            'new' => $newsRepository->findAll(array(), array('id' => 'DESC')),
         ]);
     }
     /**
@@ -34,9 +35,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/accueil", name="accueil")
      */
-    public function accueil ()
+    public function accueil(NewsRepository $newsRepository)
     {
-      return $this->render('default/index0.html.twig');
+        return $this->render(
+            'default/index0.html.twig',
+            [
+                'new' => $newsRepository->findAll(),
+            ]
+        );
     }
-
 }

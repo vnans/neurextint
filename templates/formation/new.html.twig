@@ -1,13 +1,16 @@
 {% extends 'adminbase.html.twig' %}
 
-{% block title %}New Formation{% endblock %}
+{% block title %}New Formation
+{% endblock %}
 
 {% block body %}
-   
-<div class="container-fluid">
-	 {{ include('formation/_form.html.twig') }}
-</div>
-   
 
-{#     <a href="{{ path('formation_index') }}">back to list</a> #}
+	<div class="container-fluid">
+		<h1>Ajouter une nouvelle formation
+		</h1>
+		{{ include('formation/_form.html.twig') }}
+	</div>
+
+
+	{#     <a href="{{ path('formation_index') }}">back to list</a> #}
 {% endblock %}

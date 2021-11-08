@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+
+<div class="form">
+	<div class="form-group">
+		{{ form_widget(form.title,{ 'attr': {'class':'form-control input-text','placeholder':'Titre','data-rule':'minlen:4'}}) }}
+	</div>
+
+
+	<div class="form-group">
+		{{ form_widget(form.content,{ 'attr': {'class':'form-control input-text','placeholder':'Editez ici votre contenu','data-rule':'minlen:4','cols':'8','rows':'8'}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_widget(form.img) }}
+	</div>
+
+</div>
+
+<button class="btn btn-primary">{{ button_label|default('Enregister') }}</button>
+{{ form_end(form) }}

@@ -25,7 +25,7 @@ class FormationController extends AbstractController
     }
 
 
-     /**
+    /**
      * @Route("/admin", name="formation_indexadmin", methods="GET")
      */
     public function indexadmin(FormationRepository $formationRepository): Response
@@ -45,14 +45,21 @@ class FormationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-// ajouter d'image
+            // ajouter d'image
             $file = $formation->getImage();
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file1 = $formation->getPlaquette();
+
+            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+            $fileName1 = $this->generateUniqueFileName() . '.' . $file1->guessExtension();
+
             // moves the file to the directory where brochures are stored
             $file->move($this->getParameter('images_directory'), $fileName); // stock image dans /public/img
+            $file1->move($this->getParameter('images_directory'), $fileName1); // stock image dans /public/img
 
 
             $formation->setImage($fileName);
+            $formation->setPlaquette($fileName1);
+
 
 
 
@@ -88,16 +95,23 @@ class FormationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // modifier image et formations
             $file = $formation->getImage();
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file1 = $formation->getPlaquette();
+
+
+            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+            $fileName1 = $this->generateUniqueFileName() . '.' . $file1->guessExtension();
+
             // moves the file to the directory where brochures are stored
             $file->move($this->getParameter('images_directory'), $fileName); // stock image dans /public/img
+            $file1->move($this->getParameter('images_directory'), $fileName1); // stock fichier dans /public/img
 
             $formation->setImage($fileName);
+            $formation->setPlaquette($fileName1);
 
             $this->getDoctrine()->getManager()->flush();
 
-          #  return $this->redirectToRoute('formation_index', ['id' => $formation->getId()]);
-            return $this->redirectToRoute('formation_indexadmin',['id' => $formation->getId()]);
+            #  return $this->redirectToRoute('formation_index', ['id' => $formation->getId()]);
+            return $this->redirectToRoute('formation_indexadmin', ['id' => $formation->getId()]);
         }
 
         return $this->render('formation/edit.html.twig', [
@@ -111,7 +125,7 @@ class FormationController extends AbstractController
      */
     public function delete(Request $request, Formation $formation): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$formation->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $formation->getId(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($formation);
             $em->flush();

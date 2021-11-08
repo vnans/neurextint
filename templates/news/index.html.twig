@@ -1,0 +1,56 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}les News
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid">
+
+
+		<div class="card mb3">
+
+			<div class="card-header">
+				<h1>Liste de news</h1>
+			</div>
+			<div class="card-body">
+				<div class="table-responsible">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Titre</th>
+								<th>Contenu</th>
+								<th>Image</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for news in news %}
+								<tr>
+									<td>{{ news.id }}</td>
+									<td>{{ news.title }}</td>
+									<td>{{ news.content }}</td>
+									<td>
+										<img src="{{ asset('img/') }}{{news.img}}" alt="">
+									</td>
+									<td>
+										<a href="{{ path('news_show', {'id': news.id}) }}">Détails</a>
+										<a href="{{ path('news_edit', {'id': news.id}) }}">Modifier</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="5">Aucun enregistrement trouvé</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<a href="{{ path('news_new') }}">Creer une news</a>
+	</div>
+
+
+{% endblock %}

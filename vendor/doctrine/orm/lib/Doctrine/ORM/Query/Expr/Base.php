@@ -56,7 +56,7 @@ abstract class Base
     protected $parts = [];
 
     /**
-     * @param array $args
+     * @param mixed $args
      */
     public function __construct($args = [])
     {
@@ -66,7 +66,7 @@ abstract class Base
     /**
      * @param array $args
      *
-     * @return Base
+     * @return static
      */
     public function addMultiple($args = [])
     {
@@ -80,7 +80,7 @@ abstract class Base
     /**
      * @param mixed $arg
      *
-     * @return Base
+     * @return static
      *
      * @throws \InvalidArgumentException
      */

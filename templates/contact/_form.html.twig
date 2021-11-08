@@ -4,21 +4,21 @@
 		{{ form_widget(form.nom ,{ 'attr': {'class':'form-control input-text','placeholder':'Nom','data-rule':'minlen:4'}}) }}
 	</div>
 	<div class="form-group">
-		{{ form_widget(form.email ,{ 'attr': {'class':'form-control input-text','placeholder':'email'}}) }}
+		{{ form_widget(form.email ,{ 'attr': {'class':'form-control input-text','placeholder':'Email'}}) }}
 	</div>
 	<div class="form-group">
 		{{ form_widget(form.objet ,{ 'attr': {'class':'form-control input-text','placeholder':'Objet'}}) }}
 	</div>
 	<div class="form-group">
-		 {{ form_widget(form.message ,{ 'attr': {'class':'form-control input-text','placeholder':'Message','row':'15' }}) }}
+		{{ form_widget(form.message ,{ 'attr': {'class':'form-control input-text','placeholder':'Message','row':'15' }}) }}
 	</div>
+	<div class="g-recaptcha" data-sitekey="6LdcI6wcAAAAANAS_YmEGaD-bT5JI4cPNNc1W0Z3"></div>
+	<br/>
+
 	<div class="text-center">
-		 <button class="btn btn-success">{{ button_label|default('Envoyer') }}</button>
+		<button class="btn btn-success">{{ button_label|default('Envoyer') }}</button>
 	</div>
 </div>
-    
-    
-    
-   
-   
+
+
 {{ form_end(form) }}

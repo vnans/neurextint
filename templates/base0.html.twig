@@ -1,188 +1,218 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       <!-- base pour neutrex-int  -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width , initial-scale=1.0">
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <title>{% block title %}Neutrex-int{% endblock %}</title>
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+	<head>
+		<!-- base pour neutrex-int  -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width , initial-scale=1.0">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<title>
+			{% block title %}Neutrex-int
+			{% endblock %}
+		</title>
+		<!-- Google Fonts -->
+		<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-        <!-- Bootstrap CSS File -->
-        <link href=" {{ asset('lib0/bootstrap/css/bootstrap.min.css')  }} " rel="stylesheet">
+		<!-- Bootstrap CSS File -->
+		<link
+		href=" {{ asset('lib0/bootstrap/css/bootstrap.min.css')  }} " rel="stylesheet">
 
-        <!-- Libraries CSS Files -->
-        <link href=" {{ asset('lib0/font-awesome/css/font-awesome.min.css')  }} " rel="stylesheet">
-        <link href=" {{ asset('lib0/animate/animate.min.css')  }} " rel="stylesheet">
-        <link href=" {{ asset('lib0/venobox/venobox.css')  }} " rel="stylesheet">
-        <link href=" {{ asset('lib0/owlcarousel/assets/owl.carousel.min.css')  }} " rel="stylesheet">
+		<!-- Libraries CSS Files -->
+		<link href=" {{ asset('lib0/font-awesome/css/font-awesome.min.css')  }} " rel="stylesheet">
+		<link href=" {{ asset('lib0/animate/animate.min.css')  }} " rel="stylesheet">
+		<link href=" {{ asset('lib0/venobox/venobox.css')  }} " rel="stylesheet">
+		<link
+		href=" {{ asset('lib0/owlcarousel/assets/owl.carousel.min.css')  }} " rel="stylesheet">
 
-        <!-- Main Stylesheet File -->
-        <link href=" {{ asset('css0/style.css')  }} " rel="stylesheet">
+		<!-- Main Stylesheet File -->
+		<link href=" {{ asset('css0/style.css')  }} " rel="stylesheet"> {% block stylesheets %}{% endblock %}
+		{#  chat box  #}
+		<script type="text/javascript">
+			window.$crisp = [];
+window.CRISP_WEBSITE_ID = "47f974a7-17e0-4816-a74c-0d92617f026b";
+(function () {
+d = document;
+s = d.createElement("script");
+s.src = "https://client.crisp.chat/l.js";
+s.async = 1;
+d.getElementsByTagName("head")[0].appendChild(s);
+})();
+		</script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		{# fin  chat box  #}
+	</head>
+	<header id="header">
+		<div class="container">
 
+			<div id="logo" class="pull-left">
+				<!-- Uncomment below if you prefer to use a text logo -->
+				<!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+					<a href="{{path('accueil')}}" class="scrollto"> <img src="{{asset('img/logo.jpg')}}" alt="" title=""></a>
+			</div>
 
-        {% block stylesheets %}
+			<nav id="nav-menu-container">
+				<ul class="nav-menu">
+					<li class="menu-active">
+						<a href="{{path('accueil')}}">Accueil</a>
+					</li>
+					<!-- <li><a href="{{path('accueil')}}">A propos de nous</a></li> -->
+					<li>
+						<a href="{{path('activite')}}">Liste de nos activités</a>
+					</li>
+					<!-- <li><a href="#schedule">Nos operations</a></li> -->
+					<li>
+						<a href="{{ path('formation_index') }}">Nos formations</a>
+					</li>
+					<li>
+						<a href="{{ path('news_actu') }}">News</a>
+					</li>
+					{# <li><a href="{{ path('biographie_index') }}">Nôtre Equipe</a></li> #}
+					<li>
+						<a href="{{ path('contact_new')}}">Nous Contacter</a>
+					</li>
+					{# {% if is_granted('ROLE_ADMIN') %}
+																																																																																					        <li class="buy-tickets"><a href="{{ path('fos_user_security_logout')}}">Se déconnecter</a></li>
+																																																																																					          {% else %}
+																																																																																					        <li class="buy-tickets"><a href="{{ path('admin')}}">Se connecter</a></li>
+																																																																																					      {% endif %} #}
 
-        {% endblock %}
-       {#  chat box  #}
-        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="47f974a7-17e0-4816-a74c-0d92617f026b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-         {# fin  chat box  #}
-    </head>
-<header id="header">
-  <div class="container">
+				</ul>
+			</nav>
+			<!-- #nav-menu-container -->
+		</div>
+	</header>
 
-    <div id="logo" class="pull-left">
-      <!-- Uncomment below if you prefer to use a text logo -->
-      <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-      <a href="{{path('accueil')}}" class="scrollto"><img src="{{asset('img/slogo.png')}}" alt="" title=""></a>
-    </div>
-
-    <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        <li class="menu-active"><a href="{{path('accueil')}}">Accueil</a></li>
-        <!-- <li><a href="{{path('accueil')}}">A propos de nous</a></li> -->
-        <li><a href="{{path('activite')}}">Liste de nos activités</a></li>
-        <!-- <li><a href="#schedule">Nos operations</a></li> -->
-        <li><a href="{{ path('formation_index') }}">Nos formations</a></li>
-        <li><a href="{{ path('biographie_index') }}">Nôtre Equipe</a></li>
-        <li><a href="{{ path('contact_new')}}">Nous Contacter</a></li>
-        {% if is_granted('ROLE_ADMIN') %}
-        <li class="buy-tickets"><a href="{{ path('fos_user_security_logout')}}">Se déconnecter</a></li>
-          {% else %}
-        <li class="buy-tickets"><a href="{{ path('admin')}}">Se connecter</a></li>
-      {% endif %}
-
-      </ul>
-    </nav><!-- #nav-menu-container -->
-  </div>
-</header>
-
-    <body>
-
-
-
-
-
-
-
-
-
-
-
-
-        {% block body %} {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--==========================
-          Footer
-        ============================-->
-        <footer id="footer">
-          <div class="footer-top">
-            <div class="container">
-              <div class="row">
-
-                <div class="col-lg-3 col-md-6 footer-info">
-                  <img src="{{ asset('img/slogo.png')}}" alt="Neutrex-Int">
-                  <p>Neutrex-int est une société basée à Abidjan en Côte d’Ivoire. Nous nous appuyons sur un groupe d’expert multiculturel, qualifié, expérimenté, opérationnel et professionnel réunis par la passion de la neutralisation des explosifs et un souci permanent de la qualité pour évoluer dans un monde plus sure.</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                  <h4>Liens</h4>
-                  <ul>
-                    <li><i class="fa fa-angle-right"></i> <a href=" {{ path('accueil')}} ">Accueil</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href=" {{ path('biographie_index')}} ">A Propos de nous</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href=" {{ path('activite')}} ">Services</a></li>
-                    <!-- <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li> -->
-                  </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                  <h4>En savoir plus</h4>
-                  <ul>
-                    <li><i class="fa fa-angle-right"></i> <a href="{{ path('activite')}}">Liste de nos activités</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="{{ path('formation_index')}}">Formation</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="{{ path('biographie_index')}}">Notre équipe</a></li>
-                    <!-- <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li> -->
-                  </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-contact">
-                  <h4>Contactez Nous</h4>
-                  <p>
-                    Abidjan <br>
-                    Cote d'Ivoire<br>
-
-                    <strong>tel:</strong> +225 79 70 71 30<br>
-                    <strong>Email:</strong>info@neutrex-int.com<br>
-                  </p>
-
-                  <div class="social-links">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="copyright">
-              &copy; Copyright <strong>NEUTREX-INT </strong>. tous Droits  Reservés            </div>
-            <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
-              -->
-              Designed by <a href="#">ME</a>
-            </div>
-          </div>
-        </footer><!-- #footer -->
+	<body>
 
 
+		{% block body %}{% endblock %}
 
 
-        {% block javascripts %}
-        <!-- JavaScript Libraries -->
-        <!-- JavaScript Libraries -->
-        <script src=" {{ asset('lib0/jquery/jquery.min.js') }} "></script>
-        <script src=" {{ asset('lib0/jquery/jquery-migrate.min.js') }} "></script>
-        <script src=" {{ asset('lib0/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
-        <script src=" {{ asset('lib0/easing/easing.min.js') }} "></script>
-        <script src=" {{ asset('lib0/superfish/hoverIntent.js') }} "></script>
-        <script src=" {{ asset('lib0/superfish/superfish.min.js') }} "></script>
-        <script src=" {{ asset('lib0/wow/wow.min.js') }} "></script>
-        <script src=" {{ asset('lib0/venobox/venobox.min.js') }} "></script>
-        <script src=" {{ asset('lib0/owlcarousel/owl.carousel.min.js') }} "></script>
+		<!--==========================
+																																		          Footer
+																																		        ============================-->
+		<footer id="footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
 
-        <!-- Contact Form JavaScript File -->
-        <script src=" {{ asset('contactform0/contactform.js') }} "></script>
+						<div class="col-lg-3 col-md-6 footer-info">
+							<img src="{{ asset('img/logo.jpg')}}" alt="Neutrex-Int">
+							<p>Neutrex-int est une société basée à Abidjan en Côte d’Ivoire. Nous nous appuyons sur un groupe d’expert multiculturel, qualifié, expérimenté, opérationnel et professionnel réunis par la passion de la neutralisation des explosifs et un souci permanent de la qualité pour évoluer dans un monde plus sure.</p>
+						</div>
 
-        <!-- Template Main Javascript File -->
-        <script src=" {{ asset('js0/main.js') }} "></script>
+						<div class="col-lg-3 col-md-6 footer-links">
+							<h4>Liens</h4>
+							<ul>
+								<li>
+									<i class="fa fa-angle-right"></i>
+									<a href=" {{ path('accueil')}} ">Accueil</a>
+								</li>
+								<li>
+									<i class="fa fa-angle-right"></i>
+									<a href=" {{ path('news_actu')}} ">News</a>
+								</li>
 
-        {% endblock %}
-    </body>
+								<!-- <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+																																																																																																																																								                    <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li> -->
+							</ul>
+						</div>
+
+						<div class="col-lg-3 col-md-6 footer-links">
+							<h4>En savoir plus</h4>
+							<ul>
+								<li>
+									<i class="fa fa-angle-right"></i>
+									<a href="{{ path('activite')}}">Liste de nos activités</a>
+								</li>
+								<li>
+									<i class="fa fa-angle-right"></i>
+									<a href="{{ path('formation_index')}}">Nos formations</a>
+								</li>
+
+								<!-- <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+																																																																																																																																								                    <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li> -->
+							</ul>
+						</div>
+
+						<div class="col-lg-3 col-md-6 footer-contact">
+							<h4>Contactez Nous</h4>
+							<p>
+								Abidjan
+								<br>
+								Cote d'Ivoire<br>
+
+								<strong>tel:</strong>
+								+225 07 79 70 71 30<br>
+								<strong>Email:</strong>info@neutrex-int.com<br>
+							</p>
+
+							<div
+								class="social-links">
+								{# <a href="#" class="twitter">
+																																																																																																																																									<i class="fa fa-twitter"></i>
+																																																																																																																																								</a> #}
+								<a href="https://web.facebook.com/NEUTREX.Int" class="facebook">
+									<i class="fa fa-facebook"></i>
+								</a>
+								{# <a href="#" class="instagram">
+																																																																																																																																									<i class="fa fa-instagram"></i>
+																																																																																																																																								</a>
+																																																																																																																																								<a href="#" class="google-plus">
+																																																																																																																																									<i class="fa fa-google-plus"></i>
+																																																																																																																																								</a> #}
+								<a href="#" class="linkedin">
+									<i class="fa fa-linkedin"></i>
+								</a>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="copyright">
+					&copy; Copyright
+					<strong>NEUTREX-INT
+					</strong>Tous droits  reservés
+				</div>
+				{# <div
+									class="credits">
+									<!--
+																																																																																				                All the links in the footer should remain intact.
+																																																																																				                You can delete the links only if you purchased the pro version.
+																																																																																				                Licensing information: https://bootstrapmade.com/license/
+																																																																																				                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+																																																																																				              -->
+									Designed by
+									<a href="#">ME</a>
+								</div> #}
+			</div>
+		</footer>
+		<!-- #footer -->
+
+
+		{% block javascripts %}
+			<!-- JavaScript Libraries -->
+			<!-- JavaScript Libraries --><script src=" {{ asset('lib0/jquery/jquery.min.js') }} "> </script>
+			<script src=" {{ asset('lib0/jquery/jquery-migrate.min.js') }} "></script>
+			<script src=" {{ asset('lib0/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
+			<script src=" {{ asset('lib0/easing/easing.min.js') }} "></script>
+			<script src=" {{ asset('lib0/superfish/hoverIntent.js') }} "></script>
+			<script src=" {{ asset('lib0/superfish/superfish.min.js') }} "></script>
+			<script src=" {{ asset('lib0/wow/wow.min.js') }} "></script>
+			<script src=" {{ asset('lib0/venobox/venobox.min.js') }} "></script>
+			<script src=" {{ asset('lib0/owlcarousel/owl.carousel.min.js') }} "></script>
+
+			<!-- Contact Form JavaScript File -->
+			<script src=" {{ asset('contactform0/contactform.js') }} "></script>
+
+			<!-- Template Main Javascript File -->
+			<script src=" {{ asset('js0/main.js') }} "></script>
+
+		{% endblock %}
+	</body>
 </html>

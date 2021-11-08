@@ -1,106 +1,135 @@
 {% extends 'base0.html.twig' %}
 
-{% block title %}Neutrex-int{% endblock %}
+{% block title %}Neutrex-int
+{% endblock %}
 
 {% block body %}
-<!--==========================
-  Intro Section
-============================-->
-<section id="intro">
-  <div class="intro-container wow fadeIn">
-    <h1 class="mb-4 pb-0">NEUTREX INT<br><span>EXPERTISE </span> IN MOTION</h1>
-    <p class="mb-4 pb-0">Déminage , Dépollution de champs de bataille ,Neutralisation d'explosifs, Formation</p>
-    <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-      data-autoplay="true"></a>
-    <a href="#about" class="about-btn scrollto">About The Event</a> -->
-  </div>
-</section>
-<main id="main" >
-  <!--==========================
-   Section A propos
-  ============================-->
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>NEUTREX-INT</h2>
-          <p>Neutrex-int est une société basée à Abidjan en Côte d’Ivoire. Nous nous appuyons sur un groupe d’expert multiculturel, qualifié, expérimenté, opérationnel et professionnel réunis par la passion de la neutralisation des explosifs et un souci permanent de la qualité pour évoluer dans un monde plus sure..</p>
-        </div>
-        <div class="col-lg-3">
-          <h3>Formation à la gestion des risques associés aux explosifs,mines,munitions et à la menace terroriste</h3>
-          <p></p>
-        </div>
-        <div class="col-lg-3">
-          <h3></h3>
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--==========================
-    Gallery Section
-  ============================-->
-  <section id="gallery" class="wow fadeInUp">
+	<!--==========================
+																																																																														  Intro Section
+																																																																														============================-->
+	<section id="intro">
+		<div class="intro-container wow fadeIn">
+			<h1>NEUTREX<span>-int</span>
+			</h1>
 
-    <div class="container">
-      <div class="section-header">
-        <h2>Gallerie</h2>
-        <p>Nos differentes Actions en image</p>
-      </div>
-    </div>
+			<h1 class="mb-4 pb-0">
+				EXPERTISE IN MOTION
+			</h1>
+			<p class="mb-4 pb-0">Déminage , Dépollution de champs de bataille ,Neutralisation d'explosifs, Formation</p>
+			<!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+																																																																																																																																																																																																																																										      data-autoplay="true"></a>
+																																																																																																																																																																																																																																										    <a href="#about" class="about-btn scrollto">About The Event</a> -->
+		</div>
+	</section>
+	<main
+		id="main">
+		<!--==========================
+																																																																																																																																																												   Section A propos
+																																																																																																																																																												  ============================-->
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h2>NEUTREX-int</h2>
+						<p>Neutrex-int est une société basée à Abidjan en Côte d’Ivoire. Nous nous appuyons sur un groupe d’expert multiculturel, qualifié, expérimenté, opérationnel et professionnel réunis par la passion de la neutralisation des explosifs et un souci permanent de la qualité pour évoluer dans un monde plus sure.</p>
+					</div>
+					<div class="col-lg-3">
+						<h3>Formation à la gestion des risques associés aux explosifs,mines,munitions et à la menace terroriste</h3>
+						<p></p>
+					</div>
+					<div class="col-lg-3">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--==========================
+																																																																																																																																																												    Gallery Section
+																																																																																																																																																												  ============================-->
+		<section id="gallery" class="wow fadeInUp">
 
-    <div class="owl-carousel gallery-carousel">
-      <a href=" {{ asset('img/GaleriClassew.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GaleriClassew.jpg') }}" alt=""></a>
-      <a href=" {{ asset('img/GalerieAcc.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieAcc.png') }}" alt=""></a>
-      <a href=" {{ asset('img/GalerieActiv.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieActiv.jpg') }} " alt=""></a>
-      <a href=" {{ asset('img/GalerieFormation.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieFormation.jpg') }}" alt=""></a>
-      <a href=" {{ asset('img/GalerieDeminage.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieDeminage.jpg') }}" alt=""></a>
-      <a href=" {{ asset('img/GaleriClassew.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GaleriClassew.jpg') }}" alt=""></a>
-      <a href=" {{ asset('img/GalerieAcc.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieAcc.png') }} " alt=""></a>
-      <a href=" {{ asset('img/GalerieActiv.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieActiv.jpg') }} " alt=""></a>
-    </div>
+			<div class="container">
+				<div class="section-header">
+					<h2>Gallerie</h2>
+					<p>Nos differentes Actions en image</p>
+				</div>
+			</div>
 
-  </section>
-  <!--==========================
-    Sponsors Section
-  ============================-->
-  <section id="supporters" class="section-with-bg wow fadeInUp">
+			<div class="owl-carousel gallery-carousel">
+				<a href=" {{ asset('img/GaleriClassew.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GaleriClassew.jpg') }}" alt=""></a>
+				<a href=" {{ asset('img/GalerieAcc.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieAcc.png') }}" alt=""></a>
+				<a href=" {{ asset('img/GalerieActiv.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieActiv.jpg') }} " alt=""></a>
+				<a href=" {{ asset('img/GalerieFormation.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieFormation.jpg') }}" alt=""></a>
+				<a href=" {{ asset('img/GalerieDeminage.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieDeminage.jpg') }}" alt=""></a>
+				<a href=" {{ asset('img/GaleriClassew.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GaleriClassew.jpg') }}" alt=""></a>
+				<a href=" {{ asset('img/GalerieAcc.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieAcc.png') }} " alt=""></a>
+				<a href=" {{ asset('img/GalerieActiv.jpg') }} " class="venobox" data-gall="gallery-carousel"><img src="{{ asset('img/GalerieActiv.jpg') }} " alt=""></a>
+			</div>
 
-    <div class="container">
-      <div class="section-header">
-        <h2>Partenaire</h2>
-      </div>
+		</section>
 
-      <div class="row no-gutters supporters-wrap clearfix">
+		<!--==========================
+																																																																																										      Speakers Section
+																																																																																										    ============================-->
+		<section id="speakers" class="wow fadeInUp">
+			<div class="container">
+				<div class="section-header">
+					<h2>News</h2>
+					<p>Suivez ici notre actualité</p>
+				</div>
 
-
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="supporter-logo">
-            <img src="img/logoadem.png" class="img-fluid" alt="">
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="supporter-logo">
-            <img src="img/logoadem.png" class="img-fluid" alt="">
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="supporter-logo">
-            <img src="img/logoadem.png" class="img-fluid" alt="">
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="supporter-logo">
-            <img src="img/logoadem.png" class="img-fluid" alt="">
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+				<div class="row">
+					{% for news in new|slice(0,3) %}
+						<div class="col-lg-4 col-md-6">
+							<div class="speaker">
+								<img src="{{ asset('img/formation/')}}{{news.img}}" alt=" speaker 1" class=" img-fluid">
+								<div class="details">
+									<h3>
+										<a href="{{ path('news_show', {'id': news.id}) }}">
+											{{ news.title }}
+										</a>
+									</h3>
+									<p>
+										<a href="{{ path('news_show', {'id': news.id}) }}" class="btn btn-success">Plus de détails</a>
+									</p>
 
 
-</main>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+
+		</section>
+		<!--==========================
+																																																																																																																																																												    Sponsors Section
+																																																																																																																																																												  ============================-->
+		<section id="supporters" class="section-with-bg wow fadeInUp">
+
+			<div class="container">
+				<div class="section-header">
+					<h2>Partenaire</h2>
+				</div>
+
+				<div class="row no-gutters supporters-wrap clearfix">
+
+
+					<div class="col-lg-3 col-md-4 col-xs-6">
+						<div class="supporter-logo">
+							<img src="img/logoadem.png" class="img-fluid" alt="">
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+	</main>
 {% endblock %}
